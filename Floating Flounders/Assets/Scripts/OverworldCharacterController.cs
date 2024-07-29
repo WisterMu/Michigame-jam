@@ -19,13 +19,16 @@ public class OverworldCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        // input
+        movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
         // body.MovePosition(body.position + move * Time.deltaTime * Speed);
         
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate() 
+    {
+        // movement
         body.velocity = movementDirection * Speed;
     }
 
