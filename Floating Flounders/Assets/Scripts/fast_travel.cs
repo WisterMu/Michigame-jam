@@ -15,5 +15,10 @@ public class fast_travel : MonoBehaviour
             GameManager.Instance.overworldLocation = new Vector2(10, 0);
 
         }
+
+        if (gameObject.name == "Start")
+        {
+            SceneManager.LoadScene("Overworld");
+        }
     }
 }
