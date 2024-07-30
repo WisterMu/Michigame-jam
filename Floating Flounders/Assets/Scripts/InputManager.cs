@@ -27,6 +27,6 @@ public class InputManager : MonoBehaviour
     {
         // text.UpdateTextOverride("Testing updated text");
         textManager.UpdateText();
-        imageManager.UpdateImage();
+        // imageManager.EnableDialogue();
     }
 }

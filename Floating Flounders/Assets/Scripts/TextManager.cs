@@ -52,9 +52,9 @@ public class TextManager : MonoBehaviour
     public void UpdateText()
     {
         // test display for commands to be synced with dialogue
-        commandTextDebug.text = commandList[dialogueIndex];
-
+        string command = commandList[dialogueIndex];
         string newText = dialogueList[dialogueIndex];
+
         // only updates the text when it's not empty
         if (string.IsNullOrWhiteSpace(newText))
         {
@@ -67,6 +67,25 @@ public class TextManager : MonoBehaviour
         {
             uiText.text = newText;                                      // swaps text to next one in list
             dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
+        }
+
+        commandTextDebug.text = command;
+        if (string.IsNullOrWhiteSpace(command))
+        {
+            // empty command, do nothing
+        }
+        else
+        {
+            if (command.StartsWith("Appear"))
+            {
+                Debug.Log("Enabling Dialogue from command");
+                ImageManager.Instance.EnableDialogue();
+            }
+            else if (command.StartsWith("Disappear"))
+            {
+                Debug.Log("Disabling Dialogue from command");
+                ImageManager.Instance.DisableDialogue();
+            }
         }
 
 

@@ -5,6 +5,23 @@ using UnityEngine;
 public class ImageManager : MonoBehaviour
 {
     public Canvas canvas;
+
+    // singleton stuff
+    public static ImageManager Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +34,18 @@ public class ImageManager : MonoBehaviour
         
     }
 
-    public void UpdateImage()
+    public void EnableDialogue()
     {
         canvas.enabled = true;
+    }
+
+    public void DisableDialogue()
+    {
+        canvas.enabled = false;
+    }
+
+    public void UpdateImage()
+    {
+        // canvas.enabled = true;
     }
 }

@@ -1,6 +1,8 @@
+// Appear
 testing
 
 // command
 one
 two
 three   // four
+// Disappear
