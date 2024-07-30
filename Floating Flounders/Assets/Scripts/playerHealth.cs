@@ -24,7 +24,13 @@ public class playerHealth : MonoBehaviour
         else if (health <= 0f)
         {
             health = 0f;
-            Debug.Log("player respawn");
+            PlayerDied();
         }
+    }
+
+    private void PlayerDied()
+    {
+        LevelManager.instance.GameOver();
+        gameObject.SetActive(false);
     }
 }
