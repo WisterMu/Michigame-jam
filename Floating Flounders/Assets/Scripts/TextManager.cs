@@ -17,6 +17,24 @@ public class TextManager : MonoBehaviour
     int dialogueIndex = 0;
     int emptyLineCount = 0;
     public TextAsset dialogueInput;     // Drag and drop text file to load
+    public bool isActive = false;
+    public OverworldCharacterController playerController;
+
+    // singleton stuff
+    public static TextManager Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -80,23 +98,30 @@ public class TextManager : MonoBehaviour
             {
                 Debug.Log("Enabling Dialogue from command");
                 ImageManager.Instance.EnableDialogue();
+                isActive = true;
+                playerController.SetFrozen(true);
             }
             else if (command.StartsWith("Disappear"))
             {
                 Debug.Log("Disabling Dialogue from command");
                 ImageManager.Instance.DisableDialogue();
+                isActive = false;
+                playerController.SetFrozen(false);
             }
         }
-
-
     }
 
     // Parse a text file to load into the list of strings for the dialogue
-    void LoadTextFile(TextAsset textFile)
+    public void LoadTextFile(TextAsset textFile)
     {
         // Debug.Log(textFile);
         if (textFile)   // only loads if the text file exists
         {
+            // empties out any previous text
+            dialogueList.Clear();
+            commandList.Clear();
+            dialogueIndex = 0;
+
             string text = textFile.ToString();              // Convert TextAsset to string
             string[] textArray = text.Split("\n");          // Split file into separate lines
             // each entry in textArray should be a line in the text file
