@@ -17,8 +17,8 @@ public class TextManager : MonoBehaviour
     int dialogueIndex = 0;
     int emptyLineCount = 0;
     public TextAsset dialogueInput;     // Drag and drop text file to load
-    public bool isActive = false;
-    public OverworldCharacterController playerController;
+    public bool isActive = false;       // if the dialogue box is currently open
+    public OverworldCharacterController playerController;       // for freezing the character when necessary
 
     // singleton stuff
     public static TextManager Instance { get; private set; }
