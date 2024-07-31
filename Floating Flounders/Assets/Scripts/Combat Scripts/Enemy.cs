@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    //Damage and targeting script
+
+
     public float speed = 3f;
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackSpeed = 1f;
@@ -17,6 +21,12 @@ public class Enemy : MonoBehaviour
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.position, step);
         }
+        if (health <= 0f)
+        {
+            
+            Die();
+        }
+
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -52,6 +62,41 @@ public class Enemy : MonoBehaviour
         {
             target = null;
         }
+    }
+
+
+
+    //health script below including death 
+
+    private float health = 0f;
+    [SerializeField] private float maxHealth = 100f;
+
+    private void Start()
+    {
+        health = maxHealth;
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
+
+    public void UpdateHealth(float mod)
+    {
+        health += mod;
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 
 }

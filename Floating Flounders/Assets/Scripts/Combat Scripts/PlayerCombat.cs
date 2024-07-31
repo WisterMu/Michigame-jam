@@ -6,59 +6,17 @@ public class PlayerCombat : MonoBehaviour
 {
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    public LayerMask enemyLayers;    
-    [SerializeField] private float attackDamage = 10f;
-    // [SerializeField] private float attackSpeed = 1f;
-    private float canAttack;
-    private Transform target;
-
+    public LayerMask enemyLayers;
+    public int attackDamage = 10;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Attack();
-            
+            Attack();            
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Enemies")
-        {
-           
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Attack();
-                    other.gameObject.GetComponent<EnemyHealth>().UpdateHealth(-attackDamage);
-                    canAttack = 0f;
-                }
-           
-            
-            else
-            {
-                canAttack += Time.deltaTime;
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Enemies")
-        {
-            target = other.transform;
-
-            Debug.Log(target);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            target = null;
-        }
-    }
 
     void Attack()
     {
@@ -66,7 +24,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We Hit" + enemy.name);
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
 
     }

@@ -574,12 +574,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1997914286}
-  attackRange: 0.5
+  attackRange: 0.71
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
   attackDamage: 10
-  attackSpeed: 1
 --- !u!1 &308673123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1819,6 @@ GameObject:
   - component: {fileID: 1952290608}
   - component: {fileID: 1952290607}
   - component: {fileID: 1952290606}
-  - component: {fileID: 1952290611}
   m_Layer: 6
   m_Name: enemy
   m_TagString: Enemies
@@ -1843,6 +1841,7 @@ MonoBehaviour:
   speed: 3
   attackDamage: 10
   attackSpeed: 1
+  maxHealth: 40
 --- !u!58 &1952290607
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1980,19 +1979,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1952290611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952290605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d657a683745e9d459a7033e94f6686e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 20
 --- !u!1 &1997914285
 GameObject:
   m_ObjectHideFlags: 0
