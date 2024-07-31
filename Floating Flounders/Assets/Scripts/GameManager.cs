@@ -34,4 +34,9 @@ public class GameManager : MonoBehaviour
     {
         gameStateFlags[index] = state;
     }
+
+    public void TriggerCombat()
+    {
+        // swap scenes
+    }
 }

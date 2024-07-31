@@ -826,6 +826,7 @@ GameObject:
   - component: {fileID: 500580093}
   - component: {fileID: 500580092}
   - component: {fileID: 500580091}
+  - component: {fileID: 500580095}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -924,6 +925,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &500580095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500580090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd52c3d9cc440ac449ff84e4b16cd50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1632,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.04911337
+  m_Mass: 0.32231385
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -1666,8 +1679,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0037754935, y: -0.12145362}
-  m_Size: {x: 0.24690332, y: 0.24690334}
+  m_Offset: {x: 0.0031914115, y: -0.342072}
+  m_Size: {x: 0.62311566, y: 0.65098333}
   m_Direction: 0
 --- !u!1 &857538675
 GameObject:
@@ -1895,7 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overworldLocation: {x: 0, y: 0}
-  flags: 
+  gameStateFlags: 
 --- !u!4 &903519993
 Transform:
   m_ObjectHideFlags: 0

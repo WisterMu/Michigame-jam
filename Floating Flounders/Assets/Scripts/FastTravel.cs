@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class fast_travel : MonoBehaviour
+public class FastTravel : MonoBehaviour
 {
 
     void OnMouseDown()
