@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TouchTrigger : MonoBehaviour
 {
+    public string destination;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class TouchTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         // Debug.Log("Collision detected!");
-        LoadScene("Fast travel");
+        LoadScene(destination);
 
     }
 
