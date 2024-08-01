@@ -403,16 +403,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: musicClips.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: musicClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 3f2d1ae2766801a429468004ff0bad3e, type: 3}
+      objectReference: {fileID: 8300000, guid: d77920ca724f5ba42bc9f9f48f774a44, type: 3}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: musicClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 88b2ed8bc4a6c4c4f81ec8b182f642f6, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: musicClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f2d1ae2766801a429468004ff0bad3e, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: musicClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71487631baece49469f3403d0ea29b35, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
