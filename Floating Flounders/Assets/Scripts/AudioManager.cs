@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public List<AudioClip> musicClips;
-    public List<AudioClip> sfxClips;
-    public AudioSource audioPlayer;
+    public List<AudioClip> musicClips;  // holds bgm, theme songs, etc.
+    public List<AudioClip> sfxClips;    // holds sound effects (attacks, damage, etc.)
+    public AudioSource audioPlayer;     // plays the actual music
+    public AudioListener listener;      // used for controlling volume
+    public float volume = 1;
 
     // singleton stuff
     public static AudioManager Instance { get; private set; }
@@ -39,6 +41,7 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    // This is a listener for when the scene changes
     private void ChangedActiveScene(Scene current, Scene next)
     {
         string currentName = current.name;
@@ -46,11 +49,10 @@ public class AudioManager : MonoBehaviour
         if (currentName == null)
         {
             // Scene1 has been removed
-            currentName = "Replaced";
+            Debug.Log("Changed Scenes: " + current.name + " --> " + next.name);
         }
 
-        Debug.Log("Scenes: " + currentName + ", " + next.name);
-
+        // changes track based on loaded scene
         if (next.name == "Overworld")
         {
             SwapMusic(1);
