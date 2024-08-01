@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -27,14 +28,41 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioPlayer.clip = musicClips[0];
-        audioPlayer.Play();
+        SceneManager.activeSceneChanged += ChangedActiveScene;
+
+        SwapMusic(0);   // start playing title music
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void ChangedActiveScene(Scene current, Scene next)
+    {
+        string currentName = current.name;
+
+        if (currentName == null)
+        {
+            // Scene1 has been removed
+            currentName = "Replaced";
+        }
+
+        Debug.Log("Scenes: " + currentName + ", " + next.name);
+
+        if (next.name == "Overworld")
+        {
+            SwapMusic(1);
+        }
+        else if (next.name == "Fast Travel")
+        {
+            SwapMusic(2);
+        }
+        else
+        {
+            SwapMusic(3);
+        }
     }
 
     // swaps music, interrupts previous music
