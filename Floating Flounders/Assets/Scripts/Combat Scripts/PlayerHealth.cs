@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class playerHealth : MonoBehaviour
 {
+
+    //Variable setup
     private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
 
+
+    //establish starting health at 100%
     private void Start()
     {
         health = maxHealth;
     }
 
+
+    //Update current health and whether player is alive or dead
     public void UpdateHealth(float mod)
     {
         health += mod;
@@ -28,6 +34,8 @@ public class playerHealth : MonoBehaviour
         }
     }
 
+
+    //brings up game over screen and deactivates player
     private void PlayerDied()
     {
         LevelManager.instance.GameOver();
