@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+
+    //establishing some variables and stuff
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 10;
 
+
+    //checking things every frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -17,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-
+    //Detects enemies and does attackDamage value to them
     void Attack()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -29,6 +33,8 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
+
+    //Draws attack sphere
     void OnDrawGizmosSelected()
     {
         if(attackPoint == null)
