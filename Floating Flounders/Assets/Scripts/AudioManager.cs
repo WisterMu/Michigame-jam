@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
         if (currentName == null)
         {
             // Scene1 has been removed
-            Debug.Log("Changed Scenes: " + current.name + " --> " + next.name);
+            Debug.Log("Changed Scenes: " + currentName + " --> " + next.name);
         }
 
         // changes track based on loaded scene
@@ -72,11 +72,19 @@ public class AudioManager : MonoBehaviour
     {
         audioPlayer.clip = musicClips[index];
         audioPlayer.Play();
+        AudioListener.volume = volume;
     }
 
     // plays a single clip once, does not interrupt music
     public void PlaySoundEffect(int index)
     {
         audioPlayer.PlayOneShot(sfxClips[index]);
+    }
+
+    // Note: the volume goes from 0.0 - 1.0
+    public void ChangeVolume(float newVolume)
+    {
+        volume = newVolume;
+        AudioListener.volume = volume;
     }
 }

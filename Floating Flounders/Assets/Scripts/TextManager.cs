@@ -99,14 +99,14 @@ public class TextManager : MonoBehaviour
                 Debug.Log("Enabling Dialogue from command");
                 ImageManager.Instance.EnableDialogue();
                 isActive = true;
-                playerController.SetFrozen(true);
+                // playerController.SetFrozen(true);
             }
             else if (command.StartsWith("Disappear"))
             {
                 Debug.Log("Disabling Dialogue from command");
                 ImageManager.Instance.DisableDialogue();
                 isActive = false;
-                playerController.SetFrozen(false);
+                // playerController.SetFrozen(false);
             }
         }
     }

@@ -46,7 +46,7 @@ public class InputManager : MonoBehaviour
     void HandleLeftClick()
     {
         // text.UpdateTextOverride("Testing updated text");
-        TextManager.Instance.UpdateText();
+        // TextManager.Instance.UpdateText();
         // imageManager.EnableDialogue();
     }
 
