@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        AudioManager.Instance.PlaySoundEffect(0);
+        //AudioManager.Instance.PlaySoundEffect(0);
     }
 
 

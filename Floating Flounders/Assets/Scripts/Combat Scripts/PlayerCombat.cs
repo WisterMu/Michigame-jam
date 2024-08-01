@@ -6,25 +6,54 @@ public class PlayerCombat : MonoBehaviour
 {
 
     //establishing some variables and stuff
-    public Transform attackPoint;
+    public Transform attackPointleft;   
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 10;
-
+    public bool directionleft;
 
     //checking things every frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        Left();
+        if (directionleft == true)
         {
-            Attack();            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                AttackLeft();
+            }
+
         }
+        else if (directionleft == false) { }
+
+        directionleft = false;
     }
 
-    //Detects enemies and does attackDamage value to them
-    void Attack()
+
+        //ugly bools to detect player direction
+     void Left()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        if (!Input.GetKeyDown(KeyCode.W))
+        {
+            if (!Input.GetKeyDown(KeyCode.D))
+            {
+                if (!Input.GetKeyDown(KeyCode.S))
+                {
+                    directionleft = true;
+                }
+                else
+                { 
+                    directionleft = false; 
+                }
+            }
+        }
+
+    }
+
+    //Detects enemies and does attackDamage value to them to the left
+    void AttackLeft()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPointleft.position, attackRange, enemyLayers);
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -37,10 +66,16 @@ public class PlayerCombat : MonoBehaviour
     //Draws attack sphere
     void OnDrawGizmosSelected()
     {
-        if(attackPoint == null)
+        if(attackPointleft == null)
         {
         return; }
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(attackPointleft.position, attackRange);
     }
+ 
 }
+
+
+
+
+
