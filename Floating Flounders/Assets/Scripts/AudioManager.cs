@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> musicClips;  // holds bgm, theme songs, etc.
     public List<AudioClip> sfxClips;    // holds sound effects (attacks, damage, etc.)
     public AudioSource audioPlayer;     // plays the actual music
-    public AudioListener listener;      // used for controlling volume
+    // public AudioListener listener;      // used for controlling volume
     public float volume = 1;
 
     // singleton stuff
