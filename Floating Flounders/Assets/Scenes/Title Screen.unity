@@ -402,9 +402,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: musicClips.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 815015f326420104c8613e8a765747c5, type: 3}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: musicClips.Array.data[0]
       value: 

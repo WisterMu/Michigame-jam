@@ -68,14 +68,14 @@ public class AudioManager : MonoBehaviour
     }
 
     // swaps music, interrupts previous music
-    void SwapMusic(int index)
+    public void SwapMusic(int index)
     {
         audioPlayer.clip = musicClips[index];
         audioPlayer.Play();
     }
 
     // plays a single clip once, does not interrupt music
-    void PlaySoundEffect(int index)
+    public void PlaySoundEffect(int index)
     {
         audioPlayer.PlayOneShot(sfxClips[index]);
     }

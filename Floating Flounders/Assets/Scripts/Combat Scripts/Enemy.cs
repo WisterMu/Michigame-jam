@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
 
 
 
+
     //Sets player as target to follow if they enter range
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -94,6 +95,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        AudioManager.Instance.PlaySoundEffect(0);
     }
 
 
