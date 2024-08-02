@@ -9,7 +9,6 @@ public class OverworldCharacterController : MonoBehaviour
     private Vector2 movementDirection;
     public float Speed = 5f;
 
-    bool isFrozen = false;
     // public GameManager manager;
 
     // Start is called before the first frame update
@@ -22,23 +21,24 @@ public class OverworldCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        // body.MovePosition(body.position + move * Time.deltaTime * Speed);
+        if (GameManager.Instance.isMovementFrozen)
+        {
+            // frozen, do nothing
+            movementDirection = new Vector2(0, 0);      // set velocity to 0
+        }
+        else
+        {
+            // Set the character's movement direction
+            movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        }
+
         
     }
 
     private void FixedUpdate() 
     {
-        if (isFrozen)
-        {
-            // frozen, do nothing
-        }
-        else
-        {
-            // movement on fixed update
-            body.velocity = movementDirection * Speed;
-        }
-
+        // movement on fixed update
+        body.velocity = movementDirection * Speed;
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -48,10 +48,5 @@ public class OverworldCharacterController : MonoBehaviour
     void LoadPosition(Vector2 position)
     {
         body.position = position;
-    }
-
-    public void SetFrozen(bool newIsFrozen)
-    {
-        isFrozen = newIsFrozen;
     }
 }

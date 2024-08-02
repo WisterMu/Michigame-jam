@@ -44,11 +44,14 @@ public class ImageManager : MonoBehaviour
         
     }
 
+    // Turns on the canvas with the dialogue, freezes character movement
     public void EnableDialogue()
     {
         canvas.enabled = true;
+        GameManager.Instance.SetMovementFrozen(true);
     }
 
+    // Turns off the canvas with the dialogue, unfreezes character movement
     public void DisableDialogue()
     {
         canvas.enabled = false;
@@ -59,6 +62,7 @@ public class ImageManager : MonoBehaviour
             portrait.enabled = false;
         }
         enabledPortraits.Clear();
+        GameManager.Instance.SetMovementFrozen(false);
     }
 
     public void UpdateImage(string name, string emotion)
