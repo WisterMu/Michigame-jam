@@ -1230,6 +1230,7 @@ GameObject:
   - component: {fileID: 617649085}
   - component: {fileID: 617649084}
   - component: {fileID: 617649086}
+  - component: {fileID: 617649087}
   m_Layer: 5
   m_Name: Mithya
   m_TagString: Untagged
@@ -1314,6 +1315,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &617649087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617649082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c9b92fe6b7c33438ecb82a56df66c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textureLibrary:
+  - {fileID: 2800000, guid: 15943f9810c3324419b75f3bba2077bb, type: 3}
+  - {fileID: 2800000, guid: 15943f9810c3324419b75f3bba2077bb, type: 3}
+  - {fileID: 2800000, guid: 15943f9810c3324419b75f3bba2077bb, type: 3}
+  - {fileID: 2800000, guid: 15943f9810c3324419b75f3bba2077bb, type: 3}
+  - {fileID: 2800000, guid: 15943f9810c3324419b75f3bba2077bb, type: 3}
 --- !u!4 &626063921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 197218257397663726, guid: d2de7a678e4d80f4aaeaabf6f3cbb838, type: 3}
@@ -2218,6 +2237,7 @@ GameObject:
   - component: {fileID: 1190414203}
   - component: {fileID: 1190414202}
   - component: {fileID: 1190414204}
+  - component: {fileID: 1190414205}
   m_Layer: 5
   m_Name: Kai
   m_TagString: Untagged
@@ -2302,6 +2322,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1190414205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190414200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c9b92fe6b7c33438ecb82a56df66c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textureLibrary:
+  - {fileID: 2800000, guid: 1a9c2c1fdbf485a4ba0689e9f2f7cdfd, type: 3}
+  - {fileID: 2800000, guid: 1a9c2c1fdbf485a4ba0689e9f2f7cdfd, type: 3}
+  - {fileID: 2800000, guid: 1a9c2c1fdbf485a4ba0689e9f2f7cdfd, type: 3}
+  - {fileID: 2800000, guid: 1a9c2c1fdbf485a4ba0689e9f2f7cdfd, type: 3}
+  - {fileID: 2800000, guid: 1a9c2c1fdbf485a4ba0689e9f2f7cdfd, type: 3}
 --- !u!1001 &1214122518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3093,6 +3131,7 @@ GameObject:
   - component: {fileID: 1581718528}
   - component: {fileID: 1581718527}
   - component: {fileID: 1581718529}
+  - component: {fileID: 1581718530}
   m_Layer: 5
   m_Name: Julian
   m_TagString: Untagged
@@ -3177,6 +3216,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1581718530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581718525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c9b92fe6b7c33438ecb82a56df66c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textureLibrary:
+  - {fileID: 2800000, guid: 4382d22f465b38a4baff5038d7d67136, type: 3}
+  - {fileID: 2800000, guid: 4382d22f465b38a4baff5038d7d67136, type: 3}
+  - {fileID: 2800000, guid: 4382d22f465b38a4baff5038d7d67136, type: 3}
+  - {fileID: 2800000, guid: 4382d22f465b38a4baff5038d7d67136, type: 3}
+  - {fileID: 2800000, guid: 4382d22f465b38a4baff5038d7d67136, type: 3}
 --- !u!1 &1583496837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,6 +3543,7 @@ GameObject:
   - component: {fileID: 1701724153}
   - component: {fileID: 1701724152}
   - component: {fileID: 1701724154}
+  - component: {fileID: 1701724155}
   m_Layer: 5
   m_Name: Rovin
   m_TagString: Untagged
@@ -3570,6 +3628,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1701724155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701724150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c9b92fe6b7c33438ecb82a56df66c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textureLibrary:
+  - {fileID: 2800000, guid: a0958a6a8f2a10541bb32058458023f9, type: 3}
+  - {fileID: 2800000, guid: a0958a6a8f2a10541bb32058458023f9, type: 3}
+  - {fileID: 2800000, guid: a0958a6a8f2a10541bb32058458023f9, type: 3}
+  - {fileID: 2800000, guid: a0958a6a8f2a10541bb32058458023f9, type: 3}
+  - {fileID: 2800000, guid: a0958a6a8f2a10541bb32058458023f9, type: 3}
 --- !u!1 &1743617569
 GameObject:
   m_ObjectHideFlags: 0
@@ -3862,6 +3938,7 @@ GameObject:
   - component: {fileID: 1765644829}
   - component: {fileID: 1765644828}
   - component: {fileID: 1765644830}
+  - component: {fileID: 1765644831}
   m_Layer: 5
   m_Name: Yuxero
   m_TagString: Untagged
@@ -3946,6 +4023,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1765644831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765644826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c9b92fe6b7c33438ecb82a56df66c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textureLibrary:
+  - {fileID: 2800000, guid: 4cc2756b4bbb65641bfa7c2765c30dab, type: 3}
+  - {fileID: 2800000, guid: 4cc2756b4bbb65641bfa7c2765c30dab, type: 3}
+  - {fileID: 2800000, guid: 4cc2756b4bbb65641bfa7c2765c30dab, type: 3}
+  - {fileID: 2800000, guid: 4cc2756b4bbb65641bfa7c2765c30dab, type: 3}
+  - {fileID: 2800000, guid: 4cc2756b4bbb65641bfa7c2765c30dab, type: 3}
 --- !u!1001 &1794678975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4525,6 +4620,7 @@ GameObject:
   - component: {fileID: 2006959378}
   - component: {fileID: 2006959377}
   - component: {fileID: 2006959379}
+  - component: {fileID: 2006959380}
   m_Layer: 5
   m_Name: Cassian
   m_TagString: Untagged
@@ -4609,6 +4705,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &2006959380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006959375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c9b92fe6b7c33438ecb82a56df66c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textureLibrary:
+  - {fileID: 2800000, guid: 666cf9834f36f95449db17af24ce2943, type: 3}
+  - {fileID: 2800000, guid: 666cf9834f36f95449db17af24ce2943, type: 3}
+  - {fileID: 2800000, guid: 666cf9834f36f95449db17af24ce2943, type: 3}
+  - {fileID: 2800000, guid: 666cf9834f36f95449db17af24ce2943, type: 3}
+  - {fileID: 2800000, guid: 666cf9834f36f95449db17af24ce2943, type: 3}
 --- !u!1 &2067400839
 GameObject:
   m_ObjectHideFlags: 0
