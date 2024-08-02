@@ -1,4 +1,5 @@
 Rovin: This is a trash can. // Appear Enter Rovin Mithya
 Rovin: What's inside?
 Rovin: It's empty, like my soul.   // Leave Mithya Emote Smiling
+Rovin: Really long dialogue text in order to test how the dialogue looks when there is a lot of words to display and to see how the animation on the appearing words looks.
 // Disappear

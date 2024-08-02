@@ -19,7 +19,11 @@ public class TextManager : MonoBehaviour
     int emptyLineCount = 0;
     public TextAsset dialogueInput;     // Drag and drop text file to load
     public bool isActive = false;       // if the dialogue box is currently open
+    bool isAnimating = false;
     public OverworldCharacterController playerController;       // for freezing the character when necessary
+    List<string> cachedDisplayText = new List<string>();     // holds each individual word to be displayed
+    List<string> displayTextActual = new List<string>();    // the actual words displayed on the dialogue
+    // int cachedTextIndex = 0;    
 
     // singleton stuff
     public static TextManager Instance { get; private set; }
@@ -40,15 +44,44 @@ public class TextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uiText.text = "Initial text";
+        // uiText.text = "Initial text";
         // Debug.Log("Initial Capacity: " + dialogueList.Capacity.ToString());
         LoadTextFile(dialogueInput);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // TODO: animate text appearing letter by letter?
+        if (isActive)
+        {
+            if (!isAnimating)
+            {
+                InvokeRepeating("AnimateText", 0f, 0.06f);
+                isAnimating = true;
+            }
+        }
+        else
+        {
+            CancelInvoke("AnimateText");
+            isAnimating = false;
+        }
+    }
+
+    void AnimateText()
+    {
+        if (cachedDisplayText.Count == 0)
+        {
+            // empty list
+            // Debug.Log("No more words to display!");
+        }
+        else
+        {
+            displayTextActual.Add(cachedDisplayText[0]);
+            // Debug.Log("Displaying word: " + cachedDisplayText[0]);
+            cachedDisplayText.RemoveAt(0);
+        }
+        uiText.text = string.Join(' ', displayTextActual);
     }
 
     // Call this method to change the text of this object directly
@@ -238,7 +271,9 @@ public class TextManager : MonoBehaviour
         {            
             // swap text
             nameText.text = name;
-            uiText.text = newText;                                      // swaps text to next one in list
+            // uiText.text = newText;                                      // swaps text to next one in list
+            cachedDisplayText = newText.Split(' ').ToList();        // add line to cache
+            displayTextActual.Clear();                              // clear previously cached line
             dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
 
             // bring speaking character to front
