@@ -20,6 +20,7 @@ public class TextManager : MonoBehaviour
     public TextAsset dialogueInput;     // Drag and drop text file to load
     public bool isActive = false;       // if the dialogue box is currently open
     bool isAnimating = false;
+    bool activateCombat = false;        // will switch to combat once dialogue ends
     public OverworldCharacterController playerController;       // for freezing the character when necessary
     List<string> cachedDisplayText = new List<string>();     // holds each individual word to be displayed
     List<string> displayTextActual = new List<string>();    // the actual words displayed on the dialogue
@@ -55,9 +56,9 @@ public class TextManager : MonoBehaviour
     {
         if (isActive)
         {
-            if (!isAnimating)
+            if (!isAnimating)   // only creates the repeating call once
             {
-                InvokeRepeating("AnimateText", 0f, 0.06f);
+                InvokeRepeating("AnimateText", 0f, 0.06f);  // starts at 0 seconds, calls every 0.06 seconds
                 isAnimating = true;
             }
         }
@@ -65,9 +66,15 @@ public class TextManager : MonoBehaviour
         {
             CancelInvoke("AnimateText");
             isAnimating = false;
+
+            if (activateCombat)     // only activates combat when the dialogue is closed
+            {
+                GameManager.Instance.TriggerCombat();
+            }
         }
     }
 
+    // Animates the text to appear word by word, adds 1 word each time this function is called
     void AnimateText()
     {
         if (cachedDisplayText.Count == 0)
@@ -256,6 +263,12 @@ public class TextManager : MonoBehaviour
             else
             {
                 // no emote specified
+            }
+
+            // Sets the flag for starting combat once the dialogue is finished
+            if (command.Contains("Combat"))
+            {
+                activateCombat = true;
             }
         }
 

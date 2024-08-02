@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,9 +41,11 @@ public class GameManager : MonoBehaviour
         return gameStateFlags.Contains(flag);
     }
 
+    // Swaps to combat scene
     public void TriggerCombat()
     {
         // swap scenes
+        SceneManager.LoadScene("Combat");
     }
 
     public void SetMovementFrozen(bool state)
