@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public Vector2 overworldLocation = new Vector2(0, 0);
 
-    public List<bool> gameStateFlags;   // for indicating game progression
+    public List<string> gameStateFlags = new List<string>();   // for indicating game progression
 
     // singleton stuff
     public static GameManager Instance { get; private set; }
@@ -24,15 +24,17 @@ public class GameManager : MonoBehaviour
 
     private void Start() 
     {
-        for (int i = 0; i < 100; i++)
-        {
-            gameStateFlags.Add(false);      // populate flags with 100 bools
-        }
+
     }
 
-    public void SetFlag(int index, bool state)
+    public void SetFlag(string flag)
     {
-        gameStateFlags[index] = state;
+        gameStateFlags.Add(flag);
+    }
+
+    public bool GetFlag(string flag)
+    {
+        return gameStateFlags.Contains(flag);
     }
 
     public void TriggerCombat()

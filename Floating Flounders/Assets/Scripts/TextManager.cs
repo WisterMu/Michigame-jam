@@ -182,6 +182,31 @@ public class TextManager : MonoBehaviour
             {
                 // no emote specified
             }
+
+            // used for setting flags
+            if (command.Contains("Set"))
+            {
+                int startIndex = command.IndexOf('[') + 1;
+                int endIndex = command.IndexOf(']');
+                string flag = null;
+                if (startIndex >= 0 && endIndex > startIndex)
+                {
+                    flag = command.Substring(startIndex, endIndex - startIndex);
+                }
+                GameManager.Instance.SetFlag(flag);
+            }
+
+            // if (command.Contains("Req"))
+            // {
+            //     int startIndex = command.IndexOf('[') + 1;
+            //     int endIndex = command.IndexOf(']');
+            //     string flag = null;
+            //     if (startIndex >= 0 && endIndex > startIndex)
+            //     {
+            //         flag = command.Substring(startIndex, endIndex - startIndex);
+            //     }
+            //     GameManager.Instance.GetFlag(flag);
+            // }
         }
 
         // swaps out the text
