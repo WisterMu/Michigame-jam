@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 49517683}
   - component: {fileID: 49517682}
-  - component: {fileID: 49517681}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -140,14 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &49517681
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49517680}
-  m_Enabled: 1
 --- !u!20 &49517682
 Camera:
   m_ObjectHideFlags: 0
@@ -277,18 +269,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04355812, y: -0.00000011920929}
+  m_Offset: {x: 0, y: -0.0000001192093}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 9}
+    oldSize: {x: 2.22, y: 0.63}
     newSize: {x: 16, y: 9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.158413, y: 5.7043343}
+  m_Size: {x: 2.28, y: 0.66}
   m_EdgeRadius: 0
 --- !u!212 &598817789
 SpriteRenderer:
@@ -331,7 +323,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 18609dadbabfdc240bc11dd9ab69e8da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e696802e39ce525498b1be64b3be52df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -351,12 +343,101 @@ Transform:
   m_GameObject: {fileID: 598817786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -1.72, z: -0.070041895}
-  m_LocalScale: {x: 0.22095583, y: 0.22095583, z: 0.22095583}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.02, y: -1.15, z: -0.07004189}
+  m_LocalScale: {x: 1.74675, y: 1.74675, z: 1.74675}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &613624165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4231138112671155439, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18247797
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3927246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.058218747
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622544075083636495, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: musicClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 815015f326420104c8613e8a765747c5, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: musicClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d77920ca724f5ba42bc9f9f48f774a44, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: musicClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 88b2ed8bc4a6c4c4f81ec8b182f642f6, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: musicClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f2d1ae2766801a429468004ff0bad3e, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: musicClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71487631baece49469f3403d0ea29b35, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
 --- !u!1 &1093669410
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,3 +688,4 @@ SceneRoots:
   - {fileID: 1316670691}
   - {fileID: 2011795162}
   - {fileID: 598817790}
+  - {fileID: 613624165}

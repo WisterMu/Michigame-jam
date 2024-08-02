@@ -94,19 +94,64 @@ public class TextManager : MonoBehaviour
         }
         else
         {
+            // this is a command
             if (command.StartsWith("Appear"))
             {
                 Debug.Log("Enabling Dialogue from command");
                 ImageManager.Instance.EnableDialogue();
                 isActive = true;
-                playerController.SetFrozen(true);
+                // playerController.SetFrozen(true);
             }
             else if (command.StartsWith("Disappear"))
             {
                 Debug.Log("Disabling Dialogue from command");
                 ImageManager.Instance.DisableDialogue();
                 isActive = false;
-                playerController.SetFrozen(false);
+                // playerController.SetFrozen(false);
+            }
+
+            // finding which characters are referenced
+            List<string> involvedCharacters = new List<string>();
+            if (command.Contains("Rovin"))
+            {
+                involvedCharacters.Add("Rovin");
+            }
+            if (command.Contains("Mithya"))
+            {
+                involvedCharacters.Add("Mithya");
+            }
+            if (command.Contains("Kai"))
+            {
+                involvedCharacters.Add("Kai");
+            }
+            if (command.Contains("Julian"))
+            {
+                involvedCharacters.Add("Julian");
+            }
+            if (command.Contains("Cassian"))
+            {
+                involvedCharacters.Add("Cassian");
+            }
+            if (command.Contains("Yuxero"))
+            {
+                involvedCharacters.Add("Yuxero");
+            }
+
+            if (command.Contains("Enter"))
+            {
+                // new character is entering
+                foreach (string characterName in involvedCharacters)
+                {
+                    ImageManager.Instance.EnableCharacter(characterName);
+                }
+            }
+            else if (command.Contains("Leave"))
+            {
+                // character is leaving
+                foreach (string characterName in involvedCharacters)
+                {
+                    ImageManager.Instance.DisableCharacter(characterName);
+                }
             }
         }
     }
