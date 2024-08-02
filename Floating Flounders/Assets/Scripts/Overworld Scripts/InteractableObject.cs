@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class InteractableObject : MonoBehaviour
 {
     public TextAsset textFile;
-    public List<string> requiredFlags;
+    // public List<string> requiredFlags;
 
     bool isTouchingPlayer = false;
 
@@ -39,21 +39,21 @@ public class InteractableObject : MonoBehaviour
     void TriggerDialogue()
     {
         bool valid = true;      // checking if this interactable should work
-        if (requiredFlags.Count == 0)
-        {
-            // no required flags, do nothing
-        }
-        else
-        { 
-            foreach (string flag in requiredFlags)
-            {
-                if (!GameManager.Instance.GetFlag(flag))
-                {
-                    valid = false;
-                    Debug.Log("Missing flag: " + flag);
-                }
-            }
-        }
+        // if (requiredFlags.Count == 0)
+        // {
+        //     // no required flags, do nothing
+        // }
+        // else
+        // { 
+        //     foreach (string flag in requiredFlags)
+        //     {
+        //         if (!GameManager.Instance.GetFlag(flag))
+        //         {
+        //             valid = false;
+        //             Debug.Log("Missing flag: " + flag);
+        //         }
+        //     }
+        // }
 
         if (valid)
         {

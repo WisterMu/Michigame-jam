@@ -91,6 +91,48 @@ public class TextManager : MonoBehaviour
         else
         {
             // this is a command
+
+            // used for setting flags
+            if (command.Contains("Set"))
+            {
+                int startIndex = command.IndexOf('[') + 1;
+                int endIndex = command.IndexOf(']');
+                string flag = null;
+                if (startIndex >= 0 && endIndex > startIndex)
+                {
+                    flag = command.Substring(startIndex, endIndex - startIndex);
+                }
+                GameManager.Instance.SetFlag(flag);
+            }
+
+            bool valid = true;      // whether this interaction is valid or not
+            if (command.Contains("Req"))
+            {
+                string[] requiredFlagsArray;
+                int startIndex = command.IndexOf('[') + 1;
+                int endIndex = command.IndexOf(']');
+                string requiredFlags = null;
+                if (startIndex >= 0 && endIndex > startIndex)
+                {
+                    requiredFlags = command.Substring(startIndex, endIndex - startIndex);
+                }
+                requiredFlagsArray = requiredFlags.Split(' ');
+
+                foreach (string flag in requiredFlagsArray)
+                {
+                    if (!GameManager.Instance.GetFlag(flag))
+                    {
+                        valid = false;      // one or more flags not met
+                        Debug.Log("Missing flag: " + flag);
+                    }
+                }
+            }
+
+            if (!valid)
+            {
+                return;     // skip the following code
+            }
+            
             if (command.StartsWith("Appear"))
             {
                 Debug.Log("Enabling Dialogue from command");
@@ -182,31 +224,6 @@ public class TextManager : MonoBehaviour
             {
                 // no emote specified
             }
-
-            // used for setting flags
-            if (command.Contains("Set"))
-            {
-                int startIndex = command.IndexOf('[') + 1;
-                int endIndex = command.IndexOf(']');
-                string flag = null;
-                if (startIndex >= 0 && endIndex > startIndex)
-                {
-                    flag = command.Substring(startIndex, endIndex - startIndex);
-                }
-                GameManager.Instance.SetFlag(flag);
-            }
-
-            // if (command.Contains("Req"))
-            // {
-            //     int startIndex = command.IndexOf('[') + 1;
-            //     int endIndex = command.IndexOf(']');
-            //     string flag = null;
-            //     if (startIndex >= 0 && endIndex > startIndex)
-            //     {
-            //         flag = command.Substring(startIndex, endIndex - startIndex);
-            //     }
-            //     GameManager.Instance.GetFlag(flag);
-            // }
         }
 
         // swaps out the text
