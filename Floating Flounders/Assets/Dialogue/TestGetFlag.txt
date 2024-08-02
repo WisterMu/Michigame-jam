@@ -1,2 +1,2 @@
-Rovin: This should only appear if the wall has been touched. // Appear Enter Rovin
+Rovin: This should only appear if the wall has been touched. // Appear Enter Rovin Req [Wall]
 // Disappear
