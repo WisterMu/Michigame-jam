@@ -8,6 +8,9 @@ public class OverworldCharacterController : MonoBehaviour
     private Rigidbody2D body;
     private Vector2 movementDirection;
     public float Speed = 5f;
+    public Animator animator;
+    private const string _lastHorizontal = "LastHorizontal";
+    private const string _lastVertical = "LastVertical";
 
     // public GameManager manager;
 
@@ -29,10 +32,21 @@ public class OverworldCharacterController : MonoBehaviour
         else
         {
             // Set the character's movement direction
-            movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            movementDirection.x = Input.GetAxisRaw("Horizontal");
+            movementDirection.y = Input.GetAxisRaw("Vertical");
+
+            movementDirection.Normalize();
         }
 
-        
+        animator.SetFloat("Horizontal", movementDirection.x);
+        animator.SetFloat("Vertical", movementDirection.y);
+        animator.SetFloat("Speed", movementDirection.sqrMagnitude);
+
+        if(movementDirection != Vector2.zero)
+        {
+            animator.SetFloat(_lastHorizontal, movementDirection.x);
+            animator.SetFloat(_lastVertical, movementDirection.y);
+        }
     }
 
     private void FixedUpdate() 

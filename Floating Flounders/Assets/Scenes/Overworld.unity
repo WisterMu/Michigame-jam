@@ -288,7 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: dacb5b23627480249b3331dd8187d0b1, type: 3}
-  requiredFlags: []
 --- !u!212 &149157999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -472,8 +471,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: 17de989a4250ec94dabf61db74a75943, type: 3}
-  requiredFlags:
-  - Wall
 --- !u!50 &217796794
 Rigidbody2D:
   serializedVersion: 4
@@ -1808,6 +1805,7 @@ GameObject:
   - component: {fileID: 845881044}
   - component: {fileID: 845881043}
   - component: {fileID: 845881039}
+  - component: {fileID: 845881045}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1828,6 +1826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+  animator: {fileID: 845881045}
 --- !u!212 &845881041
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1957,6 +1956,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0031914115, y: -0.342072}
   m_Size: {x: 0.62311566, y: 0.65098333}
   m_Direction: 0
+--- !u!95 &845881045
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845881038}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99254093acdbae242a6f1f5d7a109271, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &857538675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,6 +2208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overworldLocation: {x: 0, y: 0}
   gameStateFlags: []
+  isMovementFrozen: 0
 --- !u!4 &903519993
 Transform:
   m_ObjectHideFlags: 0
@@ -3494,7 +3515,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: 98c1e8fcfed875249bc637afd35de25d, type: 3}
-  requiredFlags: []
 --- !u!50 &1583496840
 Rigidbody2D:
   serializedVersion: 4
@@ -4984,7 +5004,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: 24e623100a530de409538719c7c7d493, type: 3}
-  requiredFlags: []
 --- !u!50 &2007454739
 Rigidbody2D:
   serializedVersion: 4
