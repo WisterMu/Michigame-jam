@@ -14,6 +14,7 @@ public class TextManager : MonoBehaviour
     public TextMeshProUGUI uiText, nameText, commandTextDebug;
     List<string> dialogueList = new List<string>();
     List<string> commandList = new List<string>();
+    List<string> prevEmote = new List<string>();    // for keeping track of the character's last emote when speaking
     int dialogueIndex = 0;
     int emptyLineCount = 0;
     public TextAsset dialogueInput;     // Drag and drop text file to load
@@ -72,6 +73,15 @@ public class TextManager : MonoBehaviour
         // test display for commands to be synced with dialogue
         string command = commandList[dialogueIndex];
         string newText = dialogueList[dialogueIndex];
+        string name = null;
+
+        if (!string.IsNullOrWhiteSpace(newText))
+        {
+            // grab name before ":" in dialogue
+            string[] splitString = newText.Split(":");
+            name = splitString[0].Trim();
+            newText = splitString[1].Trim();
+        }
 
         commandTextDebug.text = command;
         if (string.IsNullOrWhiteSpace(command))
@@ -128,6 +138,7 @@ public class TextManager : MonoBehaviour
                 // new character is entering
                 foreach (string characterName in involvedCharacters)
                 {
+                    // Debug.Log("Enabling character: " + characterName);
                     ImageManager.Instance.EnableCharacter(characterName);
                 }
             }
@@ -140,9 +151,32 @@ public class TextManager : MonoBehaviour
                 }
             }
 
-            if (command.Contains("Emote"))
+            if (command.Contains("Emote") && name != null)
             {
-
+                if (command.Contains("Neutral"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Neutral");
+                }
+                else if (command.Contains("Smiling"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Smiling");
+                }
+                else if (command.Contains("Confused"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Confused");
+                }
+                else if (command.Contains("Angry"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Angry");
+                }
+                else if (command.Contains("Scared"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Scared");
+                }
+                else
+                {
+                    Debug.Log("ERROR: Script parsing missing specified emote!");
+                }
             }
             else
             {
@@ -150,7 +184,7 @@ public class TextManager : MonoBehaviour
             }
         }
 
-        // only updates the text when it's not empty
+        // swaps out the text
         if (string.IsNullOrWhiteSpace(newText))
         {
             // empty string can be used as a buffer action
@@ -159,12 +193,7 @@ public class TextManager : MonoBehaviour
             dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
         }
         else
-        {
-            // grab name before ":" in dialogue
-            string[] splitString = newText.Split(":");
-            string name = splitString[0].Trim();
-            newText = splitString[1].Trim();
-            
+        {            
             // swap text
             nameText.text = name;
             uiText.text = newText;                                      // swaps text to next one in list

@@ -1,3 +1,4 @@
 Rovin: This is a trash can. // Appear Enter Rovin Mithya
-Rovin: It's empty, like my soul.   // Leave Mithya
+Rovin: What's inside?
+Rovin: It's empty, like my soul.   // Leave Mithya Emote Smiling
 // Disappear
