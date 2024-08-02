@@ -6,12 +6,12 @@ using System.Text;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-    public TextMeshProUGUI uiText;
-    public TextMeshProUGUI commandTextDebug;
+    public TextMeshProUGUI uiText, nameText, commandTextDebug;
     List<string> dialogueList = new List<string>();
     List<string> commandList = new List<string>();
     int dialogueIndex = 0;
@@ -72,20 +72,6 @@ public class TextManager : MonoBehaviour
         // test display for commands to be synced with dialogue
         string command = commandList[dialogueIndex];
         string newText = dialogueList[dialogueIndex];
-
-        // only updates the text when it's not empty
-        if (string.IsNullOrWhiteSpace(newText))
-        {
-            // empty string can be used as a buffer action
-            // Debug.Log("EMPTY LINE " + emptyLineCount);
-            emptyLineCount++;
-            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
-        }
-        else
-        {
-            uiText.text = newText;                                      // swaps text to next one in list
-            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
-        }
 
         commandTextDebug.text = command;
         if (string.IsNullOrWhiteSpace(command))
@@ -153,6 +139,39 @@ public class TextManager : MonoBehaviour
                     ImageManager.Instance.DisableCharacter(characterName);
                 }
             }
+
+            if (command.Contains("Emote"))
+            {
+
+            }
+            else
+            {
+                // no emote specified
+            }
+        }
+
+        // only updates the text when it's not empty
+        if (string.IsNullOrWhiteSpace(newText))
+        {
+            // empty string can be used as a buffer action
+            // Debug.Log("EMPTY LINE " + emptyLineCount);
+            emptyLineCount++;
+            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
+        }
+        else
+        {
+            // grab name before ":" in dialogue
+            string[] splitString = newText.Split(":");
+            string name = splitString[0].Trim();
+            newText = splitString[1].Trim();
+            
+            // swap text
+            nameText.text = name;
+            uiText.text = newText;                                      // swaps text to next one in list
+            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
+
+            // bring speaking character to front
+            ImageManager.Instance.BringToFront(name);
         }
     }
 

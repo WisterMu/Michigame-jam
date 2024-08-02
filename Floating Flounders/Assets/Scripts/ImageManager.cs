@@ -105,9 +105,37 @@ public class ImageManager : MonoBehaviour
             else
             {
                 // offset each character portrait from each other
-                Debug.Log(character.transform.position);
+                // Debug.Log(character.transform.position);
                 character.transform.position = new Vector3(anchor.x + offset, anchor.y, anchor.z);
                 offset -= 1f;
+            }
+        }
+    }
+
+    public void BringToFront(string name)
+    {
+        foreach (RawImage portrait in enabledPortraits)
+        {
+            // lock the y position because it was causing issues for some reason
+            Vector3 oldPosition = portrait.transform.localPosition;
+            oldPosition.y = 40;     
+            portrait.transform.localPosition = oldPosition;
+
+            // change the character's color and layering to show who's talking
+            if (portrait.name == name)
+            {
+                // this is the character to bring to front
+                Debug.Log("Whited out " + portrait.name);
+                portrait.color = Color.white;
+                portrait.canvas.sortingOrder = 3;   // in front of everything EXCEPT canvas
+            }
+            else
+            {
+                // set this character behind the others
+                Debug.Log("Grayed out " + portrait.name);
+                Color grayedOut = new Color(0.3f, 0.3f, 0.3f);
+                portrait.color = grayedOut;
+                portrait.canvas.sortingOrder = 2;   // directly behind speaker
             }
         }
     }

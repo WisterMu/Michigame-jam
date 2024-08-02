@@ -25,12 +25,12 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        Debug.Log(this.name + " is touching Player!");
+        // Debug.Log(this.name + " is touching Player!");
         isTouchingPlayer = true;
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        Debug.Log(this.name + " stopped touching Player!");
+        // Debug.Log(this.name + " stopped touching Player!");
         isTouchingPlayer = false;
     }
 
@@ -47,6 +47,6 @@ public class InteractableObject : MonoBehaviour
             TextManager.Instance.UpdateText();  // update to get it started
         }
         
-        Debug.Log("Interacting with object " + this.name);
+        // Debug.Log("Interacting with object " + this.name);
     }
 }
