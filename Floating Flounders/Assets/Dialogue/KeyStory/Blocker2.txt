@@ -1,2 +1,2 @@
-Kai: We need to get Julian back from that freak, but it trapped us in here! // Req [WeaponObtained] Emote Angry
+Kai: We need to get Julian back from that freak, but it trapped us in here! //Appear Enter Req [WeaponObtained] Emote Angry
 Rovin: Let me try something. //Emote Neutral
