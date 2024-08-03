@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: sfxClips.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: musicClips.Array.size
@@ -455,6 +455,30 @@ PrefabInstance:
       propertyPath: sfxClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 815015f326420104c8613e8a765747c5, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bf181cbd15f7994c854886e3ab0f443, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ecdf2e47626d0c48bd63d1097044d88, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8612aac07ba68fd449fab931b3936352, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: a15201cf73d68ad4faeb3bd8ed9ffe51, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dbe685b5ab83794f81e59247215c817, type: 3}
+    - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: sfxClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d1b2404e0a4f654a8a6c4af4c28eb51, type: 3}
     - target: {fileID: 8686283696461809965, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
       propertyPath: musicClips.Array.data[0]
       value: 

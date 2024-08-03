@@ -81,6 +81,11 @@ public class AudioManager : MonoBehaviour
         audioPlayer.PlayOneShot(sfxClips[index]);
     }
 
+    public void PlaySoundClip(AudioClip clip)
+    {
+        audioPlayer.PlayOneShot(clip);
+    }
+
     // Note: the volume goes from 0.0 - 1.0
     public void ChangeVolume(float newVolume)
     {
