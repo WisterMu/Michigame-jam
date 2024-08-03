@@ -496,6 +496,10 @@ PrefabInstance:
       propertyPath: musicClips.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 71487631baece49469f3403d0ea29b35, type: 3}
+    - target: {fileID: 8806231216173823692, guid: 0aa1ba3aac0268d48a97c2dc95312194, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
