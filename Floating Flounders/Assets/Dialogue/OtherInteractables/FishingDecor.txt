@@ -1,0 +1,2 @@
+Rovin: Kai grew up on a lake. If I remember correctly, her grandpa caught most of these. //Appear Enter Rovin Emote Neutral
+//Disappear

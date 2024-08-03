@@ -1,0 +1,2 @@
+Rovin: It sacrifices comfort for style. Still, I should wait for Kai to get back. //Appear Enter Rovin
+//Disappear Set [WaitedForTea]
