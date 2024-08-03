@@ -1,5 +1,5 @@
 Kai: Do you really think Rovin’s fully lost it this time? //Req [TeaConvoEnd] Emote Confused
-Julian: (snoring) //Emote Sleeping
+Julian: (snoring) //Emote Sleeping Rem [TeaConvoEnd] 
 Cassian: I’m just saying that sometimes people take on the traits of their significant others, so we shouldn’t rule out the possibility that- //Exit Cassian
 Rovin: Cass! //Emote Surprised
 Kai: Who are earth are you talking about now, Rovin? //Enter Yuxero

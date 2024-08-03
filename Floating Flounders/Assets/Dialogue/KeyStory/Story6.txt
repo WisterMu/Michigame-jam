@@ -1,5 +1,5 @@
 Kai: Here’s your tea! I hope you don’t mind; I invited Julian and Cassian over, too. //Req [WaitedforTea] Appear Enter Kai Rovin Emote Smiling
-Cassian: Alright, which one of you baddies is having a full-on breakdown in here? //Enter Cassian Julian Emote Angry
+Cassian: Alright, which one of you baddies is having a full-on breakdown in here? //Enter Cassian Julian Emote Angry Rem [WaitedforTea]
 Rovin: I’m glad you guys are here! You’ve got to remember Mithya. Cass, you almost dated them back in freshman year. //Emote Smiling
 Cassian: Honey, that applies to everyone in this friend group. //Emote Neutral
 Rovin: And Jules; remember when Mithya forgot to pay for a pack of gum and felt so bad they turned themselves in to the police? //Emote Confused
