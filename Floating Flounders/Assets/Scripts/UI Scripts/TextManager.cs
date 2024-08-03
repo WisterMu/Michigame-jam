@@ -69,6 +69,7 @@ public class TextManager : MonoBehaviour
 
             if (activateCombat)     // only activates combat when the dialogue is closed
             {
+                activateCombat = false;
                 GameManager.Instance.TriggerCombat();
             }
         }
