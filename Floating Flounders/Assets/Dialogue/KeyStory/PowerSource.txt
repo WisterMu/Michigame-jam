@@ -1,2 +1,3 @@
-Rovin: Something’s happening! //Appear Enter Emote Surprised
+Rovin: Something’s happening! //Appear Enter Emote Surprised Req [Story7End]
+Rovin: What's this? My umbrella seems to be... glowing?
 //Disappear Set [WeaponObtained]
