@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     public void TriggerCombat()
     {
         // swap scenes
-        SceneManager.LoadScene("Combat");
+        SceneManager.LoadScene("Boss Fight 2");
     }
 
     public void SetMovementFrozen(bool state)

@@ -83,7 +83,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySoundClip(AudioClip clip)
     {
-        audioPlayer.PlayOneShot(clip);
+        audioPlayer.PlayOneShot(clip, 0.2f);
     }
 
     // Note: the volume goes from 0.0 - 1.0
