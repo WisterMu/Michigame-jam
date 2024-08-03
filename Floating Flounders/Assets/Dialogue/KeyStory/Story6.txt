@@ -1,0 +1,16 @@
+Kai: Here’s your tea! I hope you don’t mind; I invited Julian and Cassian over, too. //Req [Waited for Tea] Appear Enter Kai Rovin Emote Smiling
+Cassian: Alright, which one of you baddies is having a full-on breakdown in here? //Enter Cassian Julian Emote Angry
+Rovin: I’m glad you guys are here! You’ve got to remember Mithya. Cass, you almost dated them back in freshman year. //Emote Smiling
+Cassian: Honey, that applies to everyone in this friend group. //Emote Neutral
+Rovin: And Jules; remember when Mithya forgot to pay for a pack of gum and felt so bad they turned themselves in to the police? //Emote Confused
+Julian: If my friends turned themselves in to the police for a petty crime, I’d never let them live it down. //Emote Smiling
+Rovin: You didn’t! You still call them ‘my favorite little thief’ every time you see them!
+Kai: Ro, I’m gonna be honest; none of this has been ringing any bells for me either. Have you had any tea yet? //Emote Confused
+Julian: Let’s give them the benefit of the doubt, though. People don’t just disappear into thin air unless they’re testifying against a major corporation. What did you see, Ro? //Emote Neutral
+Rovin: One second Mithya was there, and then they were gone like they were sucked into the ground. //Emote Neutral
+Julian: I’m calling it now; it’s mole people. Ro’s friend was kidnapped by mole people.
+Cassian: Oh please, don’t throw any more conspiracies at them; they’ve dealt with the king of all crackpots already. 
+Rovin: I’d really prefer if we kept him out of this. He has nothing to do with what’s going on. //Emote Angry
+Kai: Yeah, c’mon guys, they’re clearly trying to distance themself from all that. //Emote Neutral
+Julian: Riiight, this is the case of the missing friend…who was abducted by mole people.
+//Disappear Set  [Tea Convo End]

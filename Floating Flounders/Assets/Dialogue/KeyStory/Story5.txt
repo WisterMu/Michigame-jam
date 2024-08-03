@@ -1,0 +1,2 @@
+Kai: Make yourself comfortable, this’ll only take a few minutes. //Req [Act2] Appear Enter Rovin Kai Emote Smiling
+//Disappear
