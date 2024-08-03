@@ -24,6 +24,8 @@ public class TextManager : MonoBehaviour
     public OverworldCharacterController playerController;       // for freezing the character when necessary
     List<string> cachedDisplayText = new List<string>();     // holds each individual word to be displayed
     List<string> displayTextActual = new List<string>();    // the actual words displayed on the dialogue
+    public List<AudioClip> voiceClips;
+    string currSpeaker = null;
     // int cachedTextIndex = 0;    
 
     // singleton stuff
@@ -88,6 +90,19 @@ public class TextManager : MonoBehaviour
             displayTextActual.Add(cachedDisplayText[0]);
             // Debug.Log("Displaying word: " + cachedDisplayText[0]);
             cachedDisplayText.RemoveAt(0);
+
+            // plays the respective character sound
+            if (AudioManager.Instance != null)
+            {
+                AudioClip clip = voiceClips[NameToIndex(currSpeaker)];
+                // Debug.Log("Playing clip of " + currSpeaker);
+                AudioManager.Instance.PlaySoundClip(clip);
+            }
+            else
+            {
+                Debug.Log("No audio manager!");
+            }
+            // AudioManager.Instance.PlaySoundClip(voiceClips[0]);
         }
         uiText.text = string.Join(' ', displayTextActual);
     }
@@ -290,6 +305,7 @@ public class TextManager : MonoBehaviour
             displayTextActual.Clear();                              // clear previously cached line
             dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
 
+            currSpeaker = name;
             // bring speaking character to front
             ImageManager.Instance.BringToFront(name);
         }
@@ -395,6 +411,36 @@ public class TextManager : MonoBehaviour
             }
         }
         return literal.ToString();
+    }
+
+    // shortcut function to getting an index into a list of characters given their name
+    // assumes they're in the same order as in the doc
+    int NameToIndex(string name)
+    {
+        switch (name)
+        {
+            case "Rovin": return 0;
+            case "Mithya": return 1;
+            case "Kai": return 2;
+            case "Julian": return 3;
+            case "Cassian": return 4;
+            case "Yuxero": return 5;
+            default: return -1;
+        }
+    }
+
+    string IndexToName(int index)
+    {
+        switch (index)
+        {
+            case 0: return "Rovin";
+            case 1: return "Mithya";
+            case 2: return "Kai";
+            case 3: return "Julian";
+            case 4: return "Cassian";
+            case 5: return "Yuxero";
+            default: return null;
+        }
     }
 
 
