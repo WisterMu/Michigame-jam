@@ -70,8 +70,12 @@ public class FlagDeleteObject : MonoBehaviour
             }
             if (deleteImage)
             {
-                Debug.Log("Disabling image!");
-                selfSprite.enabled = false;
+                if (selfSprite != null)
+                {
+                    Debug.Log("Disabling image!");
+                    selfSprite.enabled = false;
+                }
+
             }
             if (deleteParentCollider)
             {
