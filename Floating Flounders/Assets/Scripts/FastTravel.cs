@@ -10,10 +10,8 @@ public class FastTravel : MonoBehaviour
     {
         if (gameObject.name == "Overworld")
         {
+            GameManager.Instance.overworldLocation = new Vector2(-5, 0);
             SceneManager.LoadScene("Overworld");
-
-            GameManager.Instance.overworldLocation = new Vector2(10, 0);
-
         }
 
         if (gameObject.name == "Start")
@@ -24,6 +22,24 @@ public class FastTravel : MonoBehaviour
         if (gameObject.name == "Back to Menu")
         {
             SceneManager.LoadScene("Title Screen");
+        }
+
+        if (gameObject.name == "Home")
+        {
+            GameManager.Instance.overworldLocation = new Vector2(-18.31f, 4.9f);
+            SceneManager.LoadScene("Overworld");
+        }
+
+        if (gameObject.name == "Park")
+        {
+            GameManager.Instance.overworldLocation = new Vector2(-18.25f, -10.46f);
+            SceneManager.LoadScene("Overworld");
+        }
+
+        if (gameObject.name == "Kai")
+        {
+            GameManager.Instance.overworldLocation = new Vector2(1.68f, 4.73f);
+            SceneManager.LoadScene("Overworld");
         }
     }
 }
