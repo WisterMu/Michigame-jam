@@ -311,6 +311,7 @@ MonoBehaviour:
   optionContinue: 0
   optionStart: 1
   optionOption: 0
+  optionClose: 0
   menu: {fileID: 1835633139}
 --- !u!222 &598817792
 CanvasRenderer:
@@ -784,6 +785,7 @@ MonoBehaviour:
   optionContinue: 0
   optionStart: 0
   optionOption: 1
+  optionClose: 0
   menu: {fileID: 1835633139}
 --- !u!61 &1795794088
 BoxCollider2D:
@@ -1055,14 +1057,6 @@ PrefabInstance:
     - target: {fileID: 6779190024766278206, guid: 366a2dc5589a6e345a343e3ab7d38f9d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7539729296541594385, guid: 366a2dc5589a6e345a343e3ab7d38f9d, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7539729296541594385, guid: 366a2dc5589a6e345a343e3ab7d38f9d, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,7 +11,7 @@ public class Button : MonoBehaviour
     public Texture2D selected;
     public Texture2D unselected;
     public Texture2D hovered;
-    public bool optionQuit, optionContinue, optionStart, optionOption;
+    public bool optionQuit, optionContinue, optionStart, optionOption, optionClose;
     public EscapeMenu menu;
 
     // Start is called before the first frame update
@@ -60,6 +60,12 @@ public class Button : MonoBehaviour
         if (optionOption)
         {
             menu.escapeCanvas.enabled = true;
+            menu.isActive = true;
+        }
+        if (optionClose)
+        {
+            menu.escapeCanvas.enabled = false;
+            menu.isActive = false;
         }
     }
 }
