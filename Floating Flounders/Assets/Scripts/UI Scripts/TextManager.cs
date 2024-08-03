@@ -372,11 +372,11 @@ public class TextManager : MonoBehaviour
                     {
                         formattedLine = line + "//";     // add the slash to end for splitting to work
                     }
-                    Debug.Log("LINE: " + formattedLine);
+                    // Debug.Log("LINE: " + formattedLine);
                     string[] splitLine = formattedLine.Split("//");
                     foreach (string test in splitLine)
                     {
-                        Debug.Log("ITEM: " + test);
+                        // Debug.Log("ITEM: " + test);
                     }
                     string dialogueLine = splitLine[0].Trim(), commandLine = splitLine[1].Trim();
 

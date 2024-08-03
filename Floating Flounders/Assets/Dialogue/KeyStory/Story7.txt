@@ -1,11 +1,11 @@
-:Three hours of intense speculation later …
-Kai: Do you really think Rovin’s fully lost it this time? //Req [TeaConvoEnd] Emote Confused
-Julian: (snoring) //Emote Sleeping Rem [TeaConvoEnd] 
-Cassian: I’m just saying that sometimes people take on the traits of their significant others, so we shouldn’t rule out the possibility that- //Exit Cassian
-Rovin: Cass! //Emote Surprised
+:Three hours of intense speculation later … // Appear Req [TeaConvoEnd]
+Kai: Do you really think Rovin’s fully lost it this time? // Emote Confused Enter Kai Julian Cassian Rovin
+Julian: (snoring) //Emote Sleeping Rem [TeaConvoEnd]
+Cassian: I’m just saying that sometimes people take on the traits of their significant others, so we shouldn’t rule out the possibility that- 
+Rovin: Cass! //Emote Surprised Leave Cassian
 Kai: Who are earth are you talking about now, Rovin? //Enter Yuxero
-Julian: Wh… WHA– HEELLLP! //Emote Surprised Exit Julian Yuxero
+Julian: Wh… WHA– HEELLLP! //Emote Surprised Leave Julian Yuxero
 Rovin: What was that thing? //Emote Confused
 Kai: Look, it left something behind when it took Julian. //Emote Neutral
 Rovin: I’d better not touch it with my bare hands…maybe I could use my umbrella to poke it? //Enter Rovin Emote Neutral 
-//Disappear
+//Disappear Set [Story7End]

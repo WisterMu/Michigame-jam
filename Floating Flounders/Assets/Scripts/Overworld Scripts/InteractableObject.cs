@@ -8,7 +8,7 @@ public class InteractableObject : MonoBehaviour
     public TextAsset textFile;
     // public List<string> requiredFlags;
 
-    bool isTouchingPlayer = false;
+    public bool isTouchingPlayer = false;
     public bool forced = false;
 
     // Start is called before the first frame update
@@ -22,6 +22,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isTouchingPlayer)
         {
+            Debug.Log("Attempting Trigger Dialogue!");
             TriggerDialogue();
         }
         else if (forced && isTouchingPlayer && !TextManager.Instance.isActive)    // will trigger on contact
