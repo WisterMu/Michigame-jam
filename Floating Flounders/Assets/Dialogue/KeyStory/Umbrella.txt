@@ -1,0 +1,3 @@
+Rovin: There’s my umbrella!//Appear Enter Rovin Req [NeedUmbrella]
+Rovin:  The wind’s done a number on it, but it should still work. // Rem [NeedUmbrella]
+//Disappear Set [Umbrella]

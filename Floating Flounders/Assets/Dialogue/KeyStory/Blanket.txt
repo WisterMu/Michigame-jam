@@ -1,0 +1,3 @@
+Rovin: There’s my blanket! //Appear Enter Rovin Req [NeedBlanket]
+Rovin: I don’t remember leaving it here… // Rem [NeedBlanket]
+//Disappear Set [Blanket]

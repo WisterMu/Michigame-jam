@@ -1,2 +1,0 @@
-Rovin: There’s my umbrella! The wind’s done a number on it, but it should still work. //Appear Enter Rovin Req [Act1]
-//Disappear Set [Umbrella]

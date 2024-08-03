@@ -151,28 +151,42 @@ public class TextManager : MonoBehaviour
             // used for setting flags
             if (command.Contains("Set"))
             {
+                string[] addedFlagsArray;
                 int startIndex = command.IndexOf('[') + 1;
                 int endIndex = command.IndexOf(']');
-                string flag = null;
+                string addedFlags = null;
                 if (startIndex >= 0 && endIndex > startIndex)
                 {
-                    flag = command.Substring(startIndex, endIndex - startIndex);
+                    addedFlags = command.Substring(startIndex, endIndex - startIndex);
                 }
-                GameManager.Instance.SetFlag(flag);
-                Debug.Log("Set Flag: " + flag);
+                addedFlagsArray = addedFlags.Split(' ');
+
+                foreach (string flag in addedFlagsArray)
+                {
+                    GameManager.Instance.SetFlag(flag);
+                    Debug.Log("Set Flag: " + flag);
+                }
+                
+                
             }
 
             if (command.Contains("Rem"))
             {
+                string[] removeFlagsArray;
                 int startIndex = command.IndexOf('[') + 1;
                 int endIndex = command.IndexOf(']');
-                string flag = null;
+                string removedFlags = null;
                 if (startIndex >= 0 && endIndex > startIndex)
                 {
-                    flag = command.Substring(startIndex, endIndex - startIndex);
+                    removedFlags = command.Substring(startIndex, endIndex - startIndex);
                 }
-                GameManager.Instance.RemoveFlag(flag);
-                Debug.Log("Removed Flag: " + flag);
+                removeFlagsArray = removedFlags.Split(' ');
+
+                foreach (string flag in removeFlagsArray)
+                {
+                    GameManager.Instance.RemoveFlag(flag);
+                    Debug.Log("Removed Flag: " + flag);
+                }
             }
 
             bool valid = true;      // whether this interaction is valid or not

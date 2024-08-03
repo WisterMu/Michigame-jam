@@ -1,0 +1,3 @@
+Rovin: Looks like I have all I need. // Appear Enter Rovin Req [Umbrella Blanket Introduction]
+Rovin: Time to go meet up with Mithya and Kai at the park!  // Rem [Introduction]
+// Disappear Set [Act1]
