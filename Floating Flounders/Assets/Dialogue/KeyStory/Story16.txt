@@ -1,5 +1,6 @@
-Yuxero: No! I can feel my power getting weaker! Without my connection with the void, we’ll all be stuck here forever, floating endlessly in the abyss! //Req [Boss Fight End] Appear Enter Yuxero Rovin Emote Angry
-Rovin: Yuxi… I dated you for such a long time for a reason. //Emote Neutral Rem [Boss Fight End]
+Yuxero: No! Curse your gymnastical prowess! You've always been so good at tumbling... //Req [BossFightEnd] Appear Enter Yuxero Rovin Emote Angry
+Yuxero: I can feel my power getting weaker! Without my connection with the void, we’ll all be stuck here forever, floating endlessly in the abyss!
+Rovin: Yuxi… I dated you for such a long time for a reason. //Emote Neutral Rem [BossFightEnd]
 Rovin: There’s always been good in you: your determination, your passion, and most of all, your open-mindedness.
 Rovin: …
 Rovin: Maybe our world isn’t what I thought it was, but that doesn’t render it meaningless. Please, while you can, send us back.
