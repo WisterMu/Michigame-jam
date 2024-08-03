@@ -1253,7 +1253,6 @@ GameObject:
   - component: {fileID: 1667603992}
   - component: {fileID: 1667603991}
   - component: {fileID: 1667603990}
-  - component: {fileID: 1667603989}
   - component: {fileID: 1667603988}
   - component: {fileID: 1667603995}
   - component: {fileID: 1667603994}
@@ -1280,18 +1279,6 @@ MonoBehaviour:
   moveSpeed: 5
   rb2d: {fileID: 1667603991}
   animator: {fileID: 1667603995}
---- !u!114 &1667603989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667603987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd4a57e58c0f3b4db8089ba82bb8c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   maxHealth: 100
 --- !u!114 &1667603990
 MonoBehaviour:

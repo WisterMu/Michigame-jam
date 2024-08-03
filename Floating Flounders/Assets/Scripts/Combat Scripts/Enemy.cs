@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float attackSpeed = 1f;
     private float canAttack;
     private Transform target;
-
+   
 
     //checking for whether target is detected in range and whether enemy is dead (I - I)7
     private void Update()
@@ -31,6 +31,11 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void Spawn()
+    {
+        gameObject.SetActive(true);
+    }
+
 
     //Does damage to player
     private void OnCollisionStay2D(Collision2D other)
@@ -39,7 +44,7 @@ public class Enemy : MonoBehaviour
         {
             if (attackSpeed <= canAttack)
             {
-                other.gameObject.GetComponent<playerHealth>().UpdateHealth(-attackDamage);
+                other.gameObject.GetComponent<Player>().UpdateHealth(-attackDamage);
                 canAttack = 0f;
             }
             else
