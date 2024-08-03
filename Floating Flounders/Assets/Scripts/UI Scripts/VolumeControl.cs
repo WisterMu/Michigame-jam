@@ -16,6 +16,9 @@ public class VolumeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AudioManager.Instance.ChangeVolume(volumeSlider.value);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.ChangeVolume(volumeSlider.value);
+        }
     }
 }

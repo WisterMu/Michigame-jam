@@ -23,7 +23,7 @@ public class Playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveInput.Set(inputManager.Movement.x, inputManager.Movement.y);
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         moveInput.Normalize();
 

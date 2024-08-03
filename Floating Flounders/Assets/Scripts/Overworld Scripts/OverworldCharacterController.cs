@@ -35,7 +35,7 @@ public class OverworldCharacterController : MonoBehaviour
         else
         {
             // Set the character's movement direction
-            movementDirection.Set(inputManager.Movement.x, inputManager.Movement.y);
+            movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
             movementDirection.Normalize();
         }
