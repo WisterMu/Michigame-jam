@@ -15,8 +15,9 @@ public class PlayerCombat : MonoBehaviour
     {
         if (timeUntilMelee <= 0f)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0))
             {
+                FaceMouse();
                 animator.SetTrigger("attackUp");
                 timeUntilMelee = meleeSpeed;
             }
@@ -25,6 +26,15 @@ public class PlayerCombat : MonoBehaviour
                 timeUntilMelee -= Time.deltaTime;
             }
         }
+    }
+
+    void FaceMouse()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+        Vector3 direction = (mousePosition - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
