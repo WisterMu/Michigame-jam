@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Vector2 overworldLocation = new Vector2(0, 0);
+    public Vector2 overworldLocation = new Vector2(-15.69f, 2.64f);
 
     public List<string> gameStateFlags = new List<string>();   // for indicating game progression
     public bool isMovementFrozen = false;
