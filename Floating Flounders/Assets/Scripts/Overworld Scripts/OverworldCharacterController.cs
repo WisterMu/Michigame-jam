@@ -6,6 +6,7 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class OverworldCharacterController : MonoBehaviour
 {
+
     private Rigidbody2D body;
     private Vector2 movementDirection;
     public float Speed = 5f;
