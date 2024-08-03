@@ -53,12 +53,22 @@ public class FlagAppearObject : MonoBehaviour
 
         if (appear)
         {
-            selfCollider.enabled = true;
-            selfSprite.enabled = true;
-            foreach (BoxCollider2D collider in parentColliders)
+            if (selfCollider != null)
             {
-                collider.enabled = true;
+                selfCollider.enabled = true;
             }
+            if (selfSprite != null)
+            {
+                selfSprite.enabled = true;
+            }
+            if (parentColliders != null)
+            {
+                foreach (BoxCollider2D collider in parentColliders)
+                {
+                    collider.enabled = true;
+                }
+            }
+
             hasAppeared = true;
         }
     }
