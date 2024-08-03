@@ -1,0 +1,3 @@
+Kai: For some reason, I think that guy went to your house. //Req [ObstacleRemoved] Appear Enter Kai Rovin Emote Confused
+Rovin: I think you’re right, too. Let’s go!
+//Disappear

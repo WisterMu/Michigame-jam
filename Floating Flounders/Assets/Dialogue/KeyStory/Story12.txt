@@ -1,0 +1,2 @@
+Rovin: That thing sounded like it was heading towards the park, I’d better head there. //Req [LateGame] Appear Enter Rovin Emote Neutral
+//Disappear Set [VoidCreatureSpawn]
