@@ -1,2 +1,2 @@
-Rovin: Something’s happening! //Emote Surprised
+Rovin: Something’s happening! //Appear Enter Emote Surprised
 //Disappear Set [WeaponObtained]
