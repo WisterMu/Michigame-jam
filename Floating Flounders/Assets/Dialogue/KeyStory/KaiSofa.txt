@@ -1,2 +1,3 @@
-Rovin: It sacrifices comfort for style. Still, I should wait for Kai to get back. //Appear Enter Rovin
+Rovin: It sacrifices comfort for style. Still, I should wait for Kai to get back. //Appear Enter Rovin Req [NeedTea]
+Rovin: I think I hear their footsteps coming now... // Rem [NeedTea]
 //Disappear Set [WaitedForTea]

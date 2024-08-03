@@ -1,5 +1,5 @@
 Rovin: Whoa, wait, what just happened? // Req [Meeting1] Appear Enter Rovin Kai Emote Confused
-Kai: What are you talking about? This is how you perfectly lay out a picnic blanket. //Emote Smiling
+Kai: What are you talking about? This is how you perfectly lay out a picnic blanket. //Emote Smiling    Rem [Meeting1]
 Rovin: No, where’d Mithya go? They were there just a second ago and then-
 Kai: Mithya? Who’s Mithya? //Emote Confused
 Rovin: Really funny, Kai. You know Mithya, they’re our friend from back in school. //Emote Neutral
@@ -10,5 +10,5 @@ Kai: Wait, was Mithya one of his friends?
 Rovin: No way. Mithya wouldn’t be able to put up with any of his crazy theories or the way he… 
 Rovin: This isn’t about him. I’m worried about Mithya! //Emote Angry
 Kai: Ok! Don’t worry, we’ll find your friend. Why don’t we take this picnic on the road so I can make you some tea at my place? //Emote Smiling
-Rovin: Sure. Thanks, Kai; I really don’t know what’s going on. //Emote Neutral
-//Disappear Set [Act2] Rem [Meeting1]
+Rovin: Sure. Thanks, Kai; I really don’t know what’s going on. //Emote Neutral  
+//Disappear Set [Act2 Act2Intro] 
