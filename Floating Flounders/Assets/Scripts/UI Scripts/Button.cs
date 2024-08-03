@@ -29,7 +29,15 @@ public class Button : MonoBehaviour
 
     private void OnMouseOver() 
     {
-        button.texture = hovered;
+        if (button.texture == selected)
+        {
+            // this button has been clicked, don't replace with hovering
+        }
+        else
+        {
+            button.texture = hovered;
+        }
+        
     }
 
     private void OnMouseExit() 
@@ -40,6 +48,7 @@ public class Button : MonoBehaviour
     private void OnMouseDown() 
     {
         button.texture = selected;
+        // Debug.Log("Clicking BUtton!");
     }
 
     private void OnMouseUpAsButton() 
