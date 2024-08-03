@@ -2,4 +2,5 @@ Rovin: This is a trash can. // Appear Enter Rovin Mithya
 Rovin: What's inside?
 Rovin: It's empty, like my soul.   // Leave Mithya Emote Smiling
 Rovin: Really long dialogue text in order to test how the dialogue looks when there is a lot of words to display and to see how the animation on the appearing words looks.
+Yuxero: Shame. You still don’t get it. But don’t worry, once I’ve knocked you out of the void, I’ll be sure to erase the rest of your friends, and we’ll be on the same page for once about this world. // Enter Yuxero Emote Neutral
 // Disappear
