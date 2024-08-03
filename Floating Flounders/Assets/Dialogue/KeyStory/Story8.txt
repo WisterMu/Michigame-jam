@@ -1,2 +1,2 @@
-Rovin: Phew, the path to the door’s free again! //Appear Rovin Emote Neutral Rem [WeaponObtained]
+Rovin: Phew, the path to the door’s free again! //Appear Enter Rovin Emote Neutral Rem [WeaponObtained]
 //Disappear Set [ObstacleRemoved]
