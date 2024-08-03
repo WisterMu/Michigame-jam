@@ -8,5 +8,5 @@ Rovin: That’s great! I’m happy for you, buddy. //Emote Smiling
 Kai: More than anything, we’re just glad you could finally make it to one of these. How’s it going, by the way? Like with your newfound freedom and everything. 
 Rovin: Oh, it’s been fine. I’ve been catching up on the stuff we couldn’t watch together. //Emote Neutral
 Mithya: H-have you watched ‘The Negative Space’ yet? It’s on its third season right now, but it’s about this one guy who goes back in time and becomes the Emperor of Rome but has to fight vampires and- 
-Kai: Hey! Let’s set up the blanket first, and then we can argue over who Emperor Josh belongs with. 
-//Disappear Set [Meeting1] Exit Mithya
+Kai: Hey! Let’s set up the blanket first, and then we can argue over who Emperor Josh belongs with. // Leave Mithya
+//Disappear Set [Meeting1]

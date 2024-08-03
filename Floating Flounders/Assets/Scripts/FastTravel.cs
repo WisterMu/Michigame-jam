@@ -8,6 +8,12 @@ public class FastTravel : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (TextManager.Instance.isActive)
+        {
+            // dialogue is open, disable clicking
+            return;     // return early
+        }
+
         if (gameObject.name == "Overworld")
         {
             GameManager.Instance.overworldLocation = new Vector2(-5, 0);

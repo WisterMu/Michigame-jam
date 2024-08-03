@@ -1,0 +1,3 @@
+Rovin: Here's a map of places I can go!     // Appear Enter Rovin
+Rovin: I just need to <color=yellow>click</color> on my destination.    // Rem [FastTravelTutorial]
+// Disappear

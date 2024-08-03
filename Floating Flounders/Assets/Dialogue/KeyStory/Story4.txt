@@ -1,4 +1,4 @@
-Rovin: Whoa, wait, what just happened? //Req [Meeting1] Appear Enter Rovin Kai Emote Confused
+Rovin: Whoa, wait, what just happened? // Req [Meeting1] Appear Enter Rovin Kai Emote Confused
 Kai: What are you talking about? This is how you perfectly lay out a picnic blanket. //Emote Smiling
 Rovin: No, where’d Mithya go? They were there just a second ago and then-
 Kai: Mithya? Who’s Mithya? //Emote Confused
