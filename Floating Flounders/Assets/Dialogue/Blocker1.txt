@@ -1,0 +1,3 @@
+Rovin: I can't leave without my picnic supplies!    // Appear Enter Rovin Req [Act1]
+Rovin: I need my <color=purple>Blanket</color> and my <color=purple>Umbrella</color>!
+// Disappear

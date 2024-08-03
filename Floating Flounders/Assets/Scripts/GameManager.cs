@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Vector2 overworldLocation = new Vector2(-15.69f, 2.64f);
+    public Vector2 overworldLocation = new Vector2(-15.69f, 4.9f);
 
     public List<string> gameStateFlags = new List<string>();   // for indicating game progression
     public bool isMovementFrozen = false;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Start() 
     {
-
+        gameStateFlags.Add("Initial");
     }
 
     public void SetFlag(string flag)
@@ -39,6 +39,16 @@ public class GameManager : MonoBehaviour
     public bool GetFlag(string flag)
     {
         return gameStateFlags.Contains(flag);
+    }
+
+    public void RemoveFlag(string flag)
+    {
+        bool success = gameStateFlags.Remove(flag);
+        if (!success)
+        {
+            // flag not found
+            Debug.Log("Flag to remove not found: " + flag);
+        }
     }
 
     // Swaps to combat scene

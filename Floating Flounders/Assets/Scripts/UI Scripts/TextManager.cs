@@ -159,6 +159,20 @@ public class TextManager : MonoBehaviour
                     flag = command.Substring(startIndex, endIndex - startIndex);
                 }
                 GameManager.Instance.SetFlag(flag);
+                Debug.Log("Set Flag: " + flag);
+            }
+
+            if (command.Contains("Rem"))
+            {
+                int startIndex = command.IndexOf('[') + 1;
+                int endIndex = command.IndexOf(']');
+                string flag = null;
+                if (startIndex >= 0 && endIndex > startIndex)
+                {
+                    flag = command.Substring(startIndex, endIndex - startIndex);
+                }
+                GameManager.Instance.RemoveFlag(flag);
+                Debug.Log("Removed Flag: " + flag);
             }
 
             bool valid = true;      // whether this interaction is valid or not
@@ -191,14 +205,14 @@ public class TextManager : MonoBehaviour
             
             if (command.StartsWith("Appear"))
             {
-                Debug.Log("Enabling Dialogue from command");
+                // Debug.Log("Enabling Dialogue from command");
                 ImageManager.Instance.EnableDialogue();
                 isActive = true;
                 // playerController.SetFrozen(true);
             }
             else if (command.StartsWith("Disappear"))
             {
-                Debug.Log("Disabling Dialogue from command");
+                // Debug.Log("Disabling Dialogue from command");
                 ImageManager.Instance.DisableDialogue();
                 isActive = false;
                 // playerController.SetFrozen(false);
@@ -376,7 +390,7 @@ public class TextManager : MonoBehaviour
         // print out the stored lines for debugging
         for (int i = 0; i < commandList.Count(); i++)
         {
-            Debug.Log("COMMAND: " + commandList[i] + "\nDIALOGUE: " + dialogueList[i]);
+            // Debug.Log("COMMAND: " + commandList[i] + "\nDIALOGUE: " + dialogueList[i]);
         }
 
         // should be equal
@@ -387,7 +401,7 @@ public class TextManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Command and Dialogue are synced!");
+            // Debug.Log("Command and Dialogue are synced!");
         }
 
     }

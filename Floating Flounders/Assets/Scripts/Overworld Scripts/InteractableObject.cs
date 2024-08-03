@@ -9,6 +9,7 @@ public class InteractableObject : MonoBehaviour
     // public List<string> requiredFlags;
 
     bool isTouchingPlayer = false;
+    public bool forced = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,10 @@ public class InteractableObject : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isTouchingPlayer)
+        {
+            TriggerDialogue();
+        }
+        else if (forced && isTouchingPlayer && !TextManager.Instance.isActive)    // will trigger on contact
         {
             TriggerDialogue();
         }
@@ -38,22 +43,7 @@ public class InteractableObject : MonoBehaviour
 
     void TriggerDialogue()
     {
-        bool valid = true;      // checking if this interactable should work
-        // if (requiredFlags.Count == 0)
-        // {
-        //     // no required flags, do nothing
-        // }
-        // else
-        // { 
-        //     foreach (string flag in requiredFlags)
-        //     {
-        //         if (!GameManager.Instance.GetFlag(flag))
-        //         {
-        //             valid = false;
-        //             Debug.Log("Missing flag: " + flag);
-        //         }
-        //     }
-        // }
+        bool valid = true;      // checking if this interactable should work (MOVED FUNCTIONALITY TO TEXT MANAGER)
 
         if (valid)
         {

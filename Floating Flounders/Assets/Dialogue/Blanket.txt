@@ -1,0 +1,2 @@
+Rovin: There’s my blanket! I don’t remember leaving it here… //Appear Enter Rovin Req [Act1]
+//Disappear Set [Blanket]
