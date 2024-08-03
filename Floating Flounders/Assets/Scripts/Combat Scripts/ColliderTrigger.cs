@@ -17,7 +17,7 @@ public class ColliderTrigger : MonoBehaviour
         {
 
             Debug.Log("Player activated");
-            OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
+            
         }
     }
 }

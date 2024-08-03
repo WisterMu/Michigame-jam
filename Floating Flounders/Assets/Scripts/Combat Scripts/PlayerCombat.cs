@@ -5,74 +5,37 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
 
-    //establishing some variables and stuff
-    public Transform attackPointleft;   
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
-    public int attackDamage = 10;
-    public bool directionleft;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float meleeSpeed;
+    [SerializeField] private int dmg;
 
-    //checking things every frame
-    void Update()
+    float timeUntilMelee;
+
+    private void Update()
     {
-        Left();
-        if (directionleft == true)
+        if (timeUntilMelee <= 0f)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                AttackLeft();
+                animator.SetTrigger("attackUp");
+                timeUntilMelee = meleeSpeed;
             }
-
-        }
-        else if (directionleft == false) { }
-
-        directionleft = false;
-    }
-
-
-        //ugly bools to detect player direction
-     void Left()
-    {
-        if (!Input.GetKeyDown(KeyCode.W))
-        {
-            if (!Input.GetKeyDown(KeyCode.D))
+            else
             {
-                if (!Input.GetKeyDown(KeyCode.S))
-                {
-                    directionleft = true;
-                }
-                else
-                { 
-                    directionleft = false; 
-                }
+                timeUntilMelee -= Time.deltaTime;
             }
         }
-
     }
 
-    //Detects enemies and does attackDamage value to them to the left
-    void AttackLeft()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPointleft.position, attackRange, enemyLayers);
-
-        foreach (Collider2D enemy in hitEnemies)
+        if(other.tag == "Enemies")
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            other.GetComponent<Enemy>().TakeDamage(dmg);
+            Debug.Log("Enemy Hit");
         }
-
     }
 
-
-    //Draws attack sphere
-    void OnDrawGizmosSelected()
-    {
-        if(attackPointleft == null)
-        {
-        return; }
-
-        Gizmos.DrawWireSphere(attackPointleft.position, attackRange);
-    }
- 
 }
 
 
