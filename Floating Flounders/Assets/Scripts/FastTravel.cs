@@ -20,5 +20,10 @@ public class FastTravel : MonoBehaviour
         {
             SceneManager.LoadScene("Overworld");
         }
+
+        if (gameObject.name == "Back to Menu")
+        {
+            SceneManager.LoadScene("Title Screen");
+        }
     }
 }

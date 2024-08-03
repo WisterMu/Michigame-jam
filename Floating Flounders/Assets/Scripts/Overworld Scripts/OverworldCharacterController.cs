@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
+
 public class OverworldCharacterController : MonoBehaviour
 {
+
     private Rigidbody2D body;
     private Vector2 movementDirection;
     public float Speed = 5f;
+    public Animator animator;
 
-    bool isFrozen = false;
+    private const string _lastHorizontal = "LastHorizontal";
+    private const string _lastVertical = "LastVertical";
+   
+
     // public GameManager manager;
 
     // Start is called before the first frame update
@@ -22,23 +28,34 @@ public class OverworldCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        // body.MovePosition(body.position + move * Time.deltaTime * Speed);
-        
+        if (GameManager.Instance.isMovementFrozen)
+        {
+            // frozen, do nothing
+            movementDirection = new Vector2(0, 0);      // set velocity to 0
+        }
+        else
+        {
+            // Set the character's movement direction
+            movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            movementDirection.Normalize();
+        }
+
+        animator.SetFloat("Horizontal", movementDirection.x);
+        animator.SetFloat("Vertical", movementDirection.y);
+        animator.SetFloat("Speed", movementDirection.sqrMagnitude);
+
+        if (movementDirection != Vector2.zero)
+        { 
+            animator.SetFloat(_lastHorizontal, movementDirection.x);
+            animator.SetFloat(_lastVertical, movementDirection.y);
+        }
     }
 
     private void FixedUpdate() 
     {
-        if (isFrozen)
-        {
-            // frozen, do nothing
-        }
-        else
-        {
-            // movement on fixed update
-            body.velocity = movementDirection * Speed;
-        }
-
+        // movement on fixed update
+        body.velocity = movementDirection * Speed;
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -48,10 +65,5 @@ public class OverworldCharacterController : MonoBehaviour
     void LoadPosition(Vector2 position)
     {
         body.position = position;
-    }
-
-    public void SetFrozen(bool newIsFrozen)
-    {
-        isFrozen = newIsFrozen;
     }
 }

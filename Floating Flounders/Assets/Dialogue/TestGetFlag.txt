@@ -1,0 +1,3 @@
+Rovin: This should only appear if the wall has been touched. // Appear Enter Rovin Req [Wall]
+Yuxero: You fell for it fool! Thunder cross split attack!   // Enter Yuxero
+// Disappear Combat

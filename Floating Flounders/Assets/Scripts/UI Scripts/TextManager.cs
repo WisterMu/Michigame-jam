@@ -6,19 +6,25 @@ using System.Text;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-    public TextMeshProUGUI uiText;
-    public TextMeshProUGUI commandTextDebug;
+    public TextMeshProUGUI uiText, nameText, commandTextDebug;
     List<string> dialogueList = new List<string>();
     List<string> commandList = new List<string>();
+    List<string> prevEmote = new List<string>();    // for keeping track of the character's last emote when speaking
     int dialogueIndex = 0;
     int emptyLineCount = 0;
     public TextAsset dialogueInput;     // Drag and drop text file to load
     public bool isActive = false;       // if the dialogue box is currently open
+    bool isAnimating = false;
+    bool activateCombat = false;        // will switch to combat once dialogue ends
     public OverworldCharacterController playerController;       // for freezing the character when necessary
+    List<string> cachedDisplayText = new List<string>();     // holds each individual word to be displayed
+    List<string> displayTextActual = new List<string>();    // the actual words displayed on the dialogue
+    // int cachedTextIndex = 0;    
 
     // singleton stuff
     public static TextManager Instance { get; private set; }
@@ -39,15 +45,50 @@ public class TextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uiText.text = "Initial text";
+        // uiText.text = "Initial text";
         // Debug.Log("Initial Capacity: " + dialogueList.Capacity.ToString());
         LoadTextFile(dialogueInput);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // TODO: animate text appearing letter by letter?
+        if (isActive)
+        {
+            if (!isAnimating)   // only creates the repeating call once
+            {
+                InvokeRepeating("AnimateText", 0f, 0.06f);  // starts at 0 seconds, calls every 0.06 seconds
+                isAnimating = true;
+            }
+        }
+        else
+        {
+            CancelInvoke("AnimateText");
+            isAnimating = false;
+
+            if (activateCombat)     // only activates combat when the dialogue is closed
+            {
+                GameManager.Instance.TriggerCombat();
+            }
+        }
+    }
+
+    // Animates the text to appear word by word, adds 1 word each time this function is called
+    void AnimateText()
+    {
+        if (cachedDisplayText.Count == 0)
+        {
+            // empty list
+            // Debug.Log("No more words to display!");
+        }
+        else
+        {
+            displayTextActual.Add(cachedDisplayText[0]);
+            // Debug.Log("Displaying word: " + cachedDisplayText[0]);
+            cachedDisplayText.RemoveAt(0);
+        }
+        uiText.text = string.Join(' ', displayTextActual);
     }
 
     // Call this method to change the text of this object directly
@@ -72,19 +113,14 @@ public class TextManager : MonoBehaviour
         // test display for commands to be synced with dialogue
         string command = commandList[dialogueIndex];
         string newText = dialogueList[dialogueIndex];
+        string name = null;
 
-        // only updates the text when it's not empty
-        if (string.IsNullOrWhiteSpace(newText))
+        if (!string.IsNullOrWhiteSpace(newText))
         {
-            // empty string can be used as a buffer action
-            // Debug.Log("EMPTY LINE " + emptyLineCount);
-            emptyLineCount++;
-            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
-        }
-        else
-        {
-            uiText.text = newText;                                      // swaps text to next one in list
-            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
+            // grab name before ":" in dialogue
+            string[] splitString = newText.Split(":");
+            name = splitString[0].Trim();
+            newText = splitString[1].Trim();
         }
 
         commandTextDebug.text = command;
@@ -95,6 +131,48 @@ public class TextManager : MonoBehaviour
         else
         {
             // this is a command
+
+            // used for setting flags
+            if (command.Contains("Set"))
+            {
+                int startIndex = command.IndexOf('[') + 1;
+                int endIndex = command.IndexOf(']');
+                string flag = null;
+                if (startIndex >= 0 && endIndex > startIndex)
+                {
+                    flag = command.Substring(startIndex, endIndex - startIndex);
+                }
+                GameManager.Instance.SetFlag(flag);
+            }
+
+            bool valid = true;      // whether this interaction is valid or not
+            if (command.Contains("Req"))
+            {
+                string[] requiredFlagsArray;
+                int startIndex = command.IndexOf('[') + 1;
+                int endIndex = command.IndexOf(']');
+                string requiredFlags = null;
+                if (startIndex >= 0 && endIndex > startIndex)
+                {
+                    requiredFlags = command.Substring(startIndex, endIndex - startIndex);
+                }
+                requiredFlagsArray = requiredFlags.Split(' ');
+
+                foreach (string flag in requiredFlagsArray)
+                {
+                    if (!GameManager.Instance.GetFlag(flag))
+                    {
+                        valid = false;      // one or more flags not met
+                        Debug.Log("Missing flag: " + flag);
+                    }
+                }
+            }
+
+            if (!valid)
+            {
+                return;     // skip the following code
+            }
+            
             if (command.StartsWith("Appear"))
             {
                 Debug.Log("Enabling Dialogue from command");
@@ -142,6 +220,7 @@ public class TextManager : MonoBehaviour
                 // new character is entering
                 foreach (string characterName in involvedCharacters)
                 {
+                    // Debug.Log("Enabling character: " + characterName);
                     ImageManager.Instance.EnableCharacter(characterName);
                 }
             }
@@ -153,6 +232,65 @@ public class TextManager : MonoBehaviour
                     ImageManager.Instance.DisableCharacter(characterName);
                 }
             }
+
+            if (command.Contains("Emote") && name != null)
+            {
+                if (command.Contains("Neutral"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Neutral");
+                }
+                else if (command.Contains("Smiling"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Smiling");
+                }
+                else if (command.Contains("Confused"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Confused");
+                }
+                else if (command.Contains("Angry"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Angry");
+                }
+                else if (command.Contains("Scared"))
+                {
+                    ImageManager.Instance.UpdateImage(name, "Scared");
+                }
+                else
+                {
+                    Debug.Log("ERROR: Script parsing missing specified emote!");
+                }
+            }
+            else
+            {
+                // no emote specified
+            }
+
+            // Sets the flag for starting combat once the dialogue is finished
+            if (command.Contains("Combat"))
+            {
+                activateCombat = true;
+            }
+        }
+
+        // swaps out the text
+        if (string.IsNullOrWhiteSpace(newText))
+        {
+            // empty string can be used as a buffer action
+            // Debug.Log("EMPTY LINE " + emptyLineCount);
+            emptyLineCount++;
+            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
+        }
+        else
+        {            
+            // swap text
+            nameText.text = name;
+            // uiText.text = newText;                                      // swaps text to next one in list
+            cachedDisplayText = newText.Split(' ').ToList();        // add line to cache
+            displayTextActual.Clear();                              // clear previously cached line
+            dialogueIndex = (dialogueIndex + 1) % dialogueList.Count;   // iterate dialogue index, loop back if overflow
+
+            // bring speaking character to front
+            ImageManager.Instance.BringToFront(name);
         }
     }
 

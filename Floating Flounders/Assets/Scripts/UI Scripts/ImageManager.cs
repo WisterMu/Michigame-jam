@@ -44,11 +44,14 @@ public class ImageManager : MonoBehaviour
         
     }
 
+    // Turns on the canvas with the dialogue, freezes character movement
     public void EnableDialogue()
     {
         canvas.enabled = true;
+        GameManager.Instance.SetMovementFrozen(true);
     }
 
+    // Turns off the canvas with the dialogue, unfreezes character movement
     public void DisableDialogue()
     {
         canvas.enabled = false;
@@ -59,11 +62,26 @@ public class ImageManager : MonoBehaviour
             portrait.enabled = false;
         }
         enabledPortraits.Clear();
+        GameManager.Instance.SetMovementFrozen(false);
     }
 
-    public void UpdateImage()
+    public void UpdateImage(string name, string emotion)
     {
-        // canvas.enabled = true;
+        RawImage selectedPortrait = characterPortraits[0];  // rovin as default for avoiding errors
+        foreach (RawImage portrait in enabledPortraits)
+        {
+            if (portrait.name == name)
+            {
+                // this is the character to edit
+                selectedPortrait = portrait;
+            }
+        }
+        
+        Debug.Log("Showing emotion: " + emotion + " on " + name);
+        ImageLibrary library = selectedPortrait.GetComponent<ImageLibrary>();
+        Texture2D newSprite = library.GetTexture2D(emotion);
+        selectedPortrait.texture = newSprite;
+
     }
 
     public void EnableCharacter(string characterName)
@@ -94,7 +112,7 @@ public class ImageManager : MonoBehaviour
     void RearrangePortraits()
     {
         // int offset = 0;         // offset for positioning
-        Vector3 anchor = new Vector3(7.91f, 1.90f, 95.00f);
+        Vector3 anchor = new Vector3(320, 40, 0);
         float offset = 0;
         foreach (RawImage character in enabledPortraits)
         {
@@ -105,9 +123,37 @@ public class ImageManager : MonoBehaviour
             else
             {
                 // offset each character portrait from each other
-                Debug.Log(character.transform.position);
-                character.transform.position = new Vector3(anchor.x + offset, anchor.y, anchor.z);
-                offset -= 1f;
+                // Debug.Log(character.transform.position);
+                character.transform.localPosition = new Vector3(anchor.x + offset, anchor.y, anchor.z);
+                offset -= 60;
+            }
+        }
+    }
+
+    public void BringToFront(string name)
+    {
+        foreach (RawImage portrait in enabledPortraits)
+        {
+            // lock the y position because it was causing issues for some reason
+            Vector3 oldPosition = portrait.transform.localPosition;
+            oldPosition.y = 40;     
+            portrait.transform.localPosition = oldPosition;
+
+            // change the character's color and layering to show who's talking
+            if (portrait.name == name)
+            {
+                // this is the character to bring to front
+                // Debug.Log("Whited out " + portrait.name);
+                portrait.color = Color.white;
+                portrait.canvas.sortingOrder = 3;   // in front of everything EXCEPT canvas
+            }
+            else
+            {
+                // set this character behind the others
+                // Debug.Log("Grayed out " + portrait.name);
+                Color grayedOut = new Color(0.3f, 0.3f, 0.3f);
+                portrait.color = grayedOut;
+                portrait.canvas.sortingOrder = 2;   // directly behind speaker
             }
         }
     }

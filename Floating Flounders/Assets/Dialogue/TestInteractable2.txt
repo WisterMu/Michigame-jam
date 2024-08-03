@@ -1,7 +1,10 @@
-Hello there! // Appear Enter Rovin 
-Hi  // Enter Mithya
-General Kenobi! // Enter Kai Julian
-You are a bold one // Enter Yuxero
-No u    // Leave Mithya
-The gang's all here!    // Enter Mithya Cassian
+Rovin: Hello there! // Appear Enter Rovin 
+Mithya: Hi  // Enter Mithya
+Kai: General Kenobi! // Enter Kai Julian
+Yuxero: You are a bold one // Enter Yuxero
+Rovin: No u    // Leave Mithya
+Cassian: The gang's all here!    // Enter Mithya Cassian
+Yuxero: So you've all come to stop me?
+Cassian: Nah not really
+Rovin: What the heck dude
 // Disappear
