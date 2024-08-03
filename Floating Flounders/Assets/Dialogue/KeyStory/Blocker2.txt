@@ -1,2 +1,2 @@
-Kai: We need to get Julian back from that freak, but it trapped us in here! //Appear Enter Req [WeaponObtained] Emote Angry
-Rovin: Let me try something. //Emote Neutral
+Rovin: Hiyah! // Appear Enter Rovin Req [WeaponObtained]
+// Disappear Set [Blocker2Destroyed]

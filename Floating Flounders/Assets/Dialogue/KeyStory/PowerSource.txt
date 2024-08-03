@@ -1,3 +1,5 @@
-Rovin: Something’s happening! //Appear Enter Emote Surprised Req [Story7End]
+Kai: We need to get Julian back from that freak, but it trapped us in here! //Appear Enter Kai Emote Angry Req [Story7End]
+Rovin: Let me try poking it... //Emote Neutral Enter Rovin
+Rovin: Something’s happening! 
 Rovin: What's this? My umbrella seems to be... glowing?
 //Disappear Set [WeaponObtained]

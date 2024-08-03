@@ -20,12 +20,21 @@ public class FlagAppearObject : MonoBehaviour
         // but if the parent collider is being shown then the interact should be shown too
 
         // disable on startup
-        selfCollider.enabled = false;
-        selfSprite.enabled = false;
-        foreach (BoxCollider2D collider in parentColliders)
-        {
-            collider.enabled = false;
-        }
+            if (selfCollider != null)
+            {
+                selfCollider.enabled = false;
+            }
+            if (selfSprite != null)
+            {
+                selfSprite.enabled = false;
+            }
+            if (parentColliders != null)
+            {
+                foreach (BoxCollider2D collider in parentColliders)
+                {
+                    collider.enabled = false;
+                }
+            }
 
     }
 
