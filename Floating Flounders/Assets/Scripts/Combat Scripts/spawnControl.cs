@@ -21,12 +21,25 @@ public class spawnControl : MonoBehaviour
     void Update()
     {
   
-        if (currentEnemies.Count == 0 && !bossSpawned)
-        {
+       
    
             StartCoroutine(SpawnBossAfterDelay());
+        
+
+        if (currentEnemies.Contains(enemy))
+        {
+            currentEnemies.Remove(enemy);
         }
+        bool enemies = AreEnemiesOnField();
+        if (enemies == true) { }
+        if (enemies == false)
+        {
+            Debug.Log("no enemies");
+        }
+
     }
+
+
 
     IEnumerator SpawnEnemiesAfterDelay()
     {
@@ -84,7 +97,15 @@ public class spawnControl : MonoBehaviour
         if (currentEnemies.Contains(enemy))
         {
             currentEnemies.Remove(enemy);
+
+           
         }
+    }
+
+    private bool AreEnemiesOnField()
+    {
+        // Check if any enemies in the list are active
+        return currentEnemies.Exists(enemy => enemy != null && enemy.activeInHierarchy);
     }
 }
 

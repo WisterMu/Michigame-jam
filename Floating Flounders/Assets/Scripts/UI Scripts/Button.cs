@@ -60,7 +60,8 @@ public class Button : MonoBehaviour
         }
         if (optionContinue)
         {
-            
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
         }
         if (optionStart && !menu.isActive)
         {

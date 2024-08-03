@@ -480,8 +480,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.084905684, g: 0.044455335, b: 0.07824874, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b61696346f49da944b59bf316fde81e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -500,9 +500,9 @@ Transform:
   m_GameObject: {fileID: 265193337}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16893554, y: 0.52104, z: 0}
-  m_LocalScale: {x: 25.012, y: 12.925, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 33.12, y: -11.16, z: 0}
+  m_LocalScale: {x: 2.75, y: 1.421068, z: 0.10994723}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1675,19 +1675,7 @@ MonoBehaviour:
   Boss: {fileID: 2608358286750895168, guid: d4ecc47c8727dc64894190d2ccd33b2b, type: 3}
   EnemySpawner:
   - {fileID: 1074039933}
-  - {fileID: 1498562267}
-  - {fileID: 1162775459}
-  - {fileID: 927108152}
-  - {fileID: 2008738953}
-  - {fileID: 1120692676}
-  - {fileID: 565791709}
-  - {fileID: 1967901289}
-  - {fileID: 397966107}
-  - {fileID: 1668477763}
-  - {fileID: 25703951}
-  - {fileID: 1703079811}
-  - {fileID: 1788251374}
-  enemynum: 10
+  enemynum: 1
   delayBeforeSpawn: 2
 --- !u!1 &911759575
 GameObject:
