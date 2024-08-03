@@ -1,0 +1,2 @@
+Rovin: Phew, the path to the door’s free again! //Appear Rovin Emote Neutral
+//Disappear Set [ObstacleRemoved]

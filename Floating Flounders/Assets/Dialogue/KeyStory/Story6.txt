@@ -1,4 +1,4 @@
-Kai: Here’s your tea! I hope you don’t mind; I invited Julian and Cassian over, too. //Req [Waited for Tea] Appear Enter Kai Rovin Emote Smiling
+Kai: Here’s your tea! I hope you don’t mind; I invited Julian and Cassian over, too. //Req [WaitedforTea] Appear Enter Kai Rovin Emote Smiling
 Cassian: Alright, which one of you baddies is having a full-on breakdown in here? //Enter Cassian Julian Emote Angry
 Rovin: I’m glad you guys are here! You’ve got to remember Mithya. Cass, you almost dated them back in freshman year. //Emote Smiling
 Cassian: Honey, that applies to everyone in this friend group. //Emote Neutral
@@ -13,4 +13,4 @@ Cassian: Oh please, don’t throw any more conspiracies at them; they’ve dealt
 Rovin: I’d really prefer if we kept him out of this. He has nothing to do with what’s going on. //Emote Angry
 Kai: Yeah, c’mon guys, they’re clearly trying to distance themself from all that. //Emote Neutral
 Julian: Riiight, this is the case of the missing friend…who was abducted by mole people.
-//Disappear Set  [Tea Convo End]
+//Disappear Set  [TeaConvoEnd]

@@ -1,0 +1,2 @@
+Rovin: What are those things? //Req [VoidCreatureSpawn] Appear Enter Rovin Emote Neutral
+//Disappear Combat

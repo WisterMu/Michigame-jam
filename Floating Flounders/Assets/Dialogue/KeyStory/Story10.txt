@@ -1,0 +1,7 @@
+Rovin: Give me back my friend! //Appear Enter Rovin Yuxero Julian Kai Emote Angry
+Yuxero: That’s the spirit. You’ve been losing so many friends lately; it’s about time you start fighting for them. //Emote Smiling
+Julian: Save me, Ro! This guy’s making me feel really weird. Like my arms are all noodly and my brain’s all TV static. //Emote Surprised
+Yuxero: I have to say, I hate what you’ve done with the place. There’s no rhyme or reason to where you’ve put anything, I mean just look at those paintings. They’re crooked! //Emote Angry
+Kai: Ro, do you know this guy? //Emote Confused
+Rovin: I don’t care. No one insults my living room while trying to erase my friend and gets away with it!
+//Disappear Set [Fight1] Combat

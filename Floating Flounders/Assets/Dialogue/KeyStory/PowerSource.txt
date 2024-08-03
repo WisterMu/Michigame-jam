@@ -1,0 +1,2 @@
+Rovin: Something’s happening! //Emote Surprised
+//Disappear Set [WeaponObtained]

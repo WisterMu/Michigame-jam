@@ -1,1 +1,2 @@
-Rovin: I’d better not touch it with my bare hands…maybe I could use something to poke it? //Emote Neutral Disappear
+Kai: We need to get Julian back from that freak, but it trapped us in here! // Req [WeaponObtained] Emote Angry
+Rovin: Let me try something. //Emote Neutral

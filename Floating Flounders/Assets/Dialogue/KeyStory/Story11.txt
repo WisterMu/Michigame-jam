@@ -1,0 +1,8 @@
+Kai: Yeah, you better run! //Req [Fight1] Appear Enter Kai Rovin Julian Emote Angry
+Rovin: You know, as bizarre as that was, something about him felt familiar to me… couldn’t say for sure what, though. //Emote Neutral
+Rovin: I bet if he took Mithya and Cassian away, he might be able to bring them back.
+Kai: Good idea. I still have no idea who you’re talking about, but if giving that guy another thrashing gives you some closure, I’m all for it. //Emote Neutral
+Julian: I’m more than happy to be your cheerleader…after a quick nap. Ugh. //Emote Neutral
+Kai: He must be exhausted from whatever that thing tried to do to him. I’ll stay here and take care of him, you go ahead and kick its butt. 
+Rovin: Don’t worry, I’ll give ‘em a piece of my mind! //Emote Angry
+//Disappear Set [LateGame] 

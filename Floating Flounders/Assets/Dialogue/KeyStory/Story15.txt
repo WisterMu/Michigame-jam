@@ -1,0 +1,22 @@
+Rovin: Mithya! Cassian! What did he do to you? //Appear Enter Rovin Yuxero Emote Angry
+Yuxero: I wasn’t sure if you’d take the plunge, but I’m so happy you did. Welcome to my new home, Ro. //Emote Smiling
+Rovin: Drop the act, whoever you are. Tell me why you’re doing this before I smack it out of you. //Emote Angry
+Yuxero: You really haven’t figured it out yet? Who else would go to such lengths to help you see the truth? //Emote Smiling
+Rovin: You make it sound like you were doing me a favor. //Emote Angry
+Yuxero: I was! You don’t need them, Ro. Your friends are just distractions. 
+Rovin: … no… <i> Yuxi? </i>
+Yuxero: That was my mortal name. You can call me Yuxero. //Emote Neutral
+Yuxero: You see, what you and your friends disregarded as conspiracies led me down quite the rabbit hole of research. 
+Yuxero: I studied, trained, and eventually gave myself over to the powers of the universe. By casting my broken heart into the void, I discovered power beyond my wildest dreams. //Emote Smiling
+Yuxero: And I want to thank you, Ro, because if you hadn’t so rudely rejected my proposal, I wouldn’t have had the strength to take that step. 
+Yuxero: At that moment, as I knelt before you at that park bench, I finally realized that I wasn’t the problem. 
+Yuxero: It was your friends. They’re parasites that have infected your mind with unhealthy expectations. I tried to stop you from seeing them, but nothing worked. //Emote Angry
+Yuxero: With these abilities, though, I knew that I could remove their toxic influences from time and space itself. Without those distractions in your life, all you’d have left would be me. //Emote Neutral
+Yuxero: But that wasn’t enough; I knew I had to take away your ability to make new friends as well. And what better way than to have you be the only one who can remember certain people existed? 
+Yuxero: Soon, you’d be ostracized by new and old friends alike as you start to lose a grip on what’s real and what’s not. //Emote Angry
+Yuxero: Only then, would you finally realize how I felt. 
+Rovin: Yuxi…you’re sick. I ended things between us because of things like this. Even when you were just Yuxi, you acted just like the monster you are now. //Emote Angry
+Yuxero: Shame. You still don’t get it. 
+Yuxero: But don’t worry, once I’ve knocked you out of the void, I’ll be sure to erase the rest of your friends, and we’ll be on the same page for once about this world. //Emote Neutral
+Rovin: The only thing getting erased today is you! //Emote Angry
+//Disappear Set [BossFightStart] Combat
